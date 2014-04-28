@@ -26,7 +26,7 @@ with adults as (
     fc.icustay_intime,
     fc.icustay_outtime,
     ne.charttime echo_time,
-    substr(ne.text,regexp_instr(ne.text,'[[:digit:]]{2}\%')-1,4) lvef_range,
+    substr(ne.text,regexp_instr(ne.text,'[[:digit:]]{2}\%')-1,4) lvef_range, -- To my knowledge, HANA does not yet support regular expression functions. (Ishrar)
     replace(replace(ne.text, chr(13), ''), chr(10), '') text
     from adults fc
     join  mimic2v25.noteevents ne on fc.icustay_id = ne.icustay_id
