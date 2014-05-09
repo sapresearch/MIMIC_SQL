@@ -11,7 +11,7 @@ CREATE EXTERNAL TABLE wav_num_records (RECORD_ID INT COMMENT 'Metadata for the M
        COUNTER_FREQ DOUBLE COMMENT 'The counter frequency of the WFDB record (typically COMMENT , the counter frequency may be derived from an analog tape counter COMMENT , or from page numbers in a chart recording).',
        BASE_COUNT DOUBLE COMMENT 'The base counter value of the WFDB record. It is a floating-point number that specifies the counter value corresponding to sample 0. If absent COMMENT , the base counter value is taken to be zero.',
        REC_LENGTH BIGINT COMMENT 'The length of the WFDB record COMMENT , in number of sample intervals.') ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INPATH '/data/hana-csv/new_wav_num_records.csv' INTO TABLE wav_num_records;
+LOAD DATA INPATH '/data/hana-csv/new_wav_num_records.csv' INTO TABLE wav_num_records;
 
 CREATE EXTERNAL TABLE wav_num_sig_ABP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
