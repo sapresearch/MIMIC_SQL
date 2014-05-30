@@ -22,7 +22,12 @@ SELECT COUNT(*) INTO found_clinical FROM "MIMIC2V26"."icustayevents"
 	
 IF :found_clinical = 0 THEN
 	CALL "SYSTEM"."INS_MSG_PROC"('SUBJECT_ID: ' || :SUBJ_ID || ' is not found in ICUSTAYEVENTS!');
-	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."icustayevents" ORDER BY "SUBJECT_ID";
+	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."icustayevents" WHERE "SUBJECT_ID" IN
+		( SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."wav_num_records", "MIMIC2V26"."wav_num_signals"
+			WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
+				AND "MIMIC2V26"."wav_num_signals"."SIGNAL_NAME" = :SIG_NAME
+		)
+		ORDER BY "SUBJECT_ID";
 	SELECT TOP 1 "P_MSG" AS "ERROR" FROM "SYSTEM"."MESSAGE_BOX" ORDER BY "TSTAMP" DESC;
 ELSEIF :found_signal = 0 THEN
 	CALL "SYSTEM"."INS_MSG_PROC"('SUBJECT_ID: ' || :SUBJ_ID || ' is not found for the numeric signal: ' || :SIG_NAME);
@@ -31,10 +36,12 @@ ELSEIF :found_signal = 0 THEN
 		WHERE "MIMIC2V26"."wav_num_signals"."RECORD_ID" = "MIMIC2V26"."wav_num_records"."RECORD_ID"
 			AND "MIMIC2V26"."wav_num_records"."SUBJECT_ID" = :SUBJ_ID
 			ORDER BY "MIMIC2V26"."wav_num_signals"."RECORD_ID";
-	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."wav_num_records", "MIMIC2V26"."wav_num_signals"
-		WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
-			AND "MIMIC2V26"."wav_num_signals"."SIGNAL_NAME" = :SIG_NAME
-			ORDER BY "SUBJECT_ID";
+	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."icustayevents" WHERE "SUBJECT_ID" IN
+		( SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."wav_num_records", "MIMIC2V26"."wav_num_signals"
+			WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
+				AND "MIMIC2V26"."wav_num_signals"."SIGNAL_NAME" = :SIG_NAME
+		)
+		ORDER BY "SUBJECT_ID";
 	SELECT TOP 1 "P_MSG" AS "ERROR" FROM "SYSTEM"."MESSAGE_BOX" ORDER BY "TSTAMP" DESC;
 ELSE
 	EXEC 'CREATE VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_ICUSTAYEVENTS_FOR_' || :SUBJ_ID || '" AS (

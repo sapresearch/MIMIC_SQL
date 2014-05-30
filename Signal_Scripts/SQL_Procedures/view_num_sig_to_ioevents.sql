@@ -22,7 +22,12 @@ SELECT COUNT(*) INTO found_clinical FROM "MIMIC2V26"."ioevents"
 	
 IF :found_clinical = 0 THEN
 	CALL "SYSTEM"."INS_MSG_PROC"('SUBJECT_ID: ' || :SUBJ_ID || ' is not found in IOEVENTS!');
-	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."ioevents" ORDER BY "SUBJECT_ID";
+	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."ioevents" WHERE "SUBJECT_ID" IN
+		( SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."wav_num_records", "MIMIC2V26"."wav_num_signals"
+			WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
+				AND "MIMIC2V26"."wav_num_signals"."SIGNAL_NAME" = :SIG_NAME
+		)
+		ORDER BY "SUBJECT_ID";
 	SELECT TOP 1 "P_MSG" AS "ERROR" FROM "SYSTEM"."MESSAGE_BOX" ORDER BY "TSTAMP" DESC;
 ELSEIF :found_signal = 0 THEN
 	CALL "SYSTEM"."INS_MSG_PROC"('SUBJECT_ID: ' || :SUBJ_ID || ' is not found for the numeric signal: ' || :SIG_NAME);
@@ -31,10 +36,12 @@ ELSEIF :found_signal = 0 THEN
 		WHERE "MIMIC2V26"."wav_num_signals"."RECORD_ID" = "MIMIC2V26"."wav_num_records"."RECORD_ID"
 			AND "MIMIC2V26"."wav_num_records"."SUBJECT_ID" = :SUBJ_ID
 			ORDER BY "MIMIC2V26"."wav_num_signals"."RECORD_ID";
-	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."wav_num_records", "MIMIC2V26"."wav_num_signals"
-		WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
-			AND "MIMIC2V26"."wav_num_signals"."SIGNAL_NAME" = :SIG_NAME
-			ORDER BY "SUBJECT_ID";
+	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."ioevents" WHERE "SUBJECT_ID" IN
+		( SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."wav_num_records", "MIMIC2V26"."wav_num_signals"
+			WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
+				AND "MIMIC2V26"."wav_num_signals"."SIGNAL_NAME" = :SIG_NAME
+		)
+		ORDER BY "SUBJECT_ID";
 	SELECT TOP 1 "P_MSG" AS "ERROR" FROM "SYSTEM"."MESSAGE_BOX" ORDER BY "TSTAMP" DESC;
 ELSE
 	EXEC 'CREATE VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_IOEVENTS_FOR_' || :SUBJ_ID || '" AS (
@@ -44,7 +51,7 @@ ELSE
 			ADD_SECONDS("t"."RECORD_TIME",
 			"MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."SAMPLE_ID"/"t"."SAMPLE_FREQ") as "TIME_SERIES",
 			''[SIGNAL DATA]'' as "CATEGORY",
-			"MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."AMPLITUDE"/"t"."ADC_GAIN",
+			"MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."AMPLITUDE"/"t"."ADC_GAIN" AS "AMPLITUDE",
 			null as "LABEL",
 			null as "VOLUME",
 			null as "VOLUMEUOM",
