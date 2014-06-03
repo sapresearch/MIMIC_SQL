@@ -338,7 +338,7 @@ CREATE EXTERNAL TABLE wav_num_sig_UVP (RECORD_ID INT COMMENT 'ID of the record d
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_UVP.csv' INTO TABLE wav_num_sig_UVP;
 
-CREATE COLUMN TABLE wav_num_signals (SIGNAL_ID INT COMMENT 'Synthetic ID of the Signal data used as Primary Key.',
+CREATE EXTERNAL TABLE wav_num_signals (SIGNAL_ID INT COMMENT 'Synthetic ID of the Signal data used as Primary Key.',
        RECORD_ID INT COMMENT 'ID used to idendity the record.',
        RAW_FILE VARCHAR(60) COMMENT 'Name of the File containing raw signal data.',
        SIGNAL_NAME VARCHAR(20) COMMENT 'The type of signal: I, II, HR_1/2, RESP_1/3, etc.',
