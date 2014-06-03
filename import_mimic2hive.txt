@@ -5,7 +5,7 @@ USE SCHEMA mimic2v26;
 CREATE EXTERNAL TABLE wav_num_records (RECORD_ID INT COMMENT 'Metadata for the MIMIC-II waveforms records from PhysioNet',
        FILENAME VARCHAR(40) COMMENT 'The header filename for the record.',
        SUBJECT_ID INT COMMENT 'The MIMIC-II Subject ID (in the clinical database) of the patient from whom the record was recorded.',
-       RECORD_TIME LONGDATE COMMENT 'The absolute time of the beginning of the WFDB record (shifted in accordance with the MIMIC-II clinical database)',
+       RECORD_TIME TIMESTAMP COMMENT 'The absolute time of the beginning of the WFDB record (shifted in accordance with the MIMIC-II clinical database)',
        NUM_OF_SIGNALS SMALLINT COMMENT 'The number of signals in the WFDB record.',
        SAMPLE_FREQ DOUBLE COMMENT 'The sampling frequency of the WFDB record.',
        COUNTER_FREQ DOUBLE COMMENT 'The counter frequency of the WFDB record (typically COMMENT , the counter frequency may be derived from an analog tape counter COMMENT , or from page numbers in a chart recording).',
