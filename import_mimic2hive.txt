@@ -1,8 +1,5 @@
 
-
-USE SCHEMA mimic2v26;
-
-CREATE EXTERNAL TABLE wav_num_records (RECORD_ID INT COMMENT 'Metadata for the MIMIC-II waveforms records from PhysioNet',
+CREATE TABLE wav_num_records (RECORD_ID INT COMMENT 'Metadata for the MIMIC-II waveforms records from PhysioNet',
        FILENAME VARCHAR(40) COMMENT 'The header filename for the record.',
        SUBJECT_ID INT COMMENT 'The MIMIC-II Subject ID (in the clinical database) of the patient from whom the record was recorded.',
        RECORD_TIME TIMESTAMP COMMENT 'The absolute time of the beginning of the WFDB record (shifted in accordance with the MIMIC-II clinical database)',
@@ -13,332 +10,332 @@ CREATE EXTERNAL TABLE wav_num_records (RECORD_ID INT COMMENT 'Metadata for the M
        REC_LENGTH BIGINT COMMENT 'The length of the WFDB record COMMENT , in number of sample intervals.') ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/new_wav_num_records.csv' INTO TABLE wav_num_records;
 
-CREATE EXTERNAL TABLE wav_num_sig_ABP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ABP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ABP.csv' INTO TABLE wav_num_sig_ABP;
 
-CREATE EXTERNAL TABLE wav_num_sig_ABPDias (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ABPDias (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ABPDias.csv' INTO TABLE wav_num_sig_ABPDias;
 
-CREATE EXTERNAL TABLE wav_num_sig_ABPMean (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ABPMean (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ABPMean.csv' INTO TABLE wav_num_sig_ABPMean;
 
-CREATE EXTERNAL TABLE wav_num_sig_ABPSys (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ABPSys (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ABPSys.csv' INTO TABLE wav_num_sig_ABPSys;
 
-CREATE EXTERNAL TABLE wav_num_sig_AOBP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_AOBP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_AOBP.csv' INTO TABLE wav_num_sig_AOBP;
 
-CREATE EXTERNAL TABLE wav_num_sig_AOBPDias (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_AOBPDias (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_AOBPDias.csv' INTO TABLE wav_num_sig_AOBPDias;
 
-CREATE EXTERNAL TABLE wav_num_sig_AOBPMean (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_AOBPMean (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_AOBPMean.csv' INTO TABLE wav_num_sig_AOBPMean;
 
-CREATE EXTERNAL TABLE wav_num_sig_AOBPSys (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_AOBPSys (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_AOBPSys.csv' INTO TABLE wav_num_sig_AOBPSys;
 
-CREATE EXTERNAL TABLE wav_num_sig_ART (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ART (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ART.csv' INTO TABLE wav_num_sig_ART;
 
-CREATE EXTERNAL TABLE wav_num_sig_ARTDias (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ARTDias (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ARTDias.csv' INTO TABLE wav_num_sig_ARTDias;
 
-CREATE EXTERNAL TABLE wav_num_sig_ARTMean (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ARTMean (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ARTMean.csv' INTO TABLE wav_num_sig_ARTMean;
 
-CREATE EXTERNAL TABLE wav_num_sig_ARTSys (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ARTSys (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ARTSys.csv' INTO TABLE wav_num_sig_ARTSys;
 
-CREATE EXTERNAL TABLE wav_num_sig_BLOODT (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_BLOODT (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_BLOODT.csv' INTO TABLE wav_num_sig_BLOODT;
 
-CREATE EXTERNAL TABLE wav_num_sig_CI (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_CI (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_CI.csv' INTO TABLE wav_num_sig_CI;
 
-CREATE EXTERNAL TABLE wav_num_sig_CO (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_CO (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_CO.csv' INTO TABLE wav_num_sig_CO;
 
-CREATE EXTERNAL TABLE wav_num_sig_CPP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_CPP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_CPP.csv' INTO TABLE wav_num_sig_CPP;
 
-CREATE EXTERNAL TABLE wav_num_sig_CVP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_CVP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_CVP.csv' INTO TABLE wav_num_sig_CVP;
 
-CREATE EXTERNAL TABLE wav_num_sig_CVP1_3 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_CVP1_3 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_CVP1-3.csv' INTO TABLE wav_num_sig_CVP1_3;
 
-CREATE EXTERNAL TABLE wav_num_sig_CVP2_3 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_CVP2_3 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_CVP2-3.csv' INTO TABLE wav_num_sig_CVP2_3;
 
-CREATE EXTERNAL TABLE wav_num_sig_CVP3_3 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_CVP3_3 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_CVP3-3.csv' INTO TABLE wav_num_sig_CVP3_3;
 
-CREATE EXTERNAL TABLE wav_num_sig_dSpO2 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_dSpO2 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_dSpO2.csv' INTO TABLE wav_num_sig_dSpO2;
 
-CREATE EXTERNAL TABLE wav_num_sig_EctopicCount (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_EctopicCount (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_EctopicCount.csv' INTO TABLE wav_num_sig_EctopicCount;
 
-CREATE EXTERNAL TABLE wav_num_sig_EctopicStatus (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_EctopicStatus (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_EctopicStatus.csv' INTO TABLE wav_num_sig_EctopicStatus;
 
-CREATE EXTERNAL TABLE wav_num_sig_HR (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_HR (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_HR.csv' INTO TABLE wav_num_sig_HR;
 
-CREATE EXTERNAL TABLE wav_num_sig_ICP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_ICP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_ICP.csv' INTO TABLE wav_num_sig_ICP;
 
-CREATE EXTERNAL TABLE wav_num_sig_NBP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_NBP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_NBP.csv' INTO TABLE wav_num_sig_NBP;
 
-CREATE EXTERNAL TABLE wav_num_sig_NBPDias (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_NBPDias (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_NBPDias.csv' INTO TABLE wav_num_sig_NBPDias;
 
-CREATE EXTERNAL TABLE wav_num_sig_NBPMean (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_NBPMean (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_NBPMean.csv' INTO TABLE wav_num_sig_NBPMean;
 
-CREATE EXTERNAL TABLE wav_num_sig_NBPSys (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_NBPSys (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_NBPSys.csv' INTO TABLE wav_num_sig_NBPSys;
 
-CREATE EXTERNAL TABLE wav_num_sig_P1 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_P1 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_P1.csv' INTO TABLE wav_num_sig_P1;
 
-CREATE EXTERNAL TABLE wav_num_sig_P1Dias (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_P1Dias (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_P1Dias.csv' INTO TABLE wav_num_sig_P1Dias;
 
-CREATE EXTERNAL TABLE wav_num_sig_P1Mean (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_P1Mean (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_P1Mean.csv' INTO TABLE wav_num_sig_P1Mean;
 
-CREATE EXTERNAL TABLE wav_num_sig_P1Sys (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_P1Sys (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_P1Sys.csv' INTO TABLE wav_num_sig_P1Sys;
 
-CREATE EXTERNAL TABLE wav_num_sig_PAP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_PAP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_PAP.csv' INTO TABLE wav_num_sig_PAP;
 
-CREATE EXTERNAL TABLE wav_num_sig_PAPDias (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_PAPDias (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_PAPDias.csv' INTO TABLE wav_num_sig_PAPDias;
 
-CREATE EXTERNAL TABLE wav_num_sig_PAPMean (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_PAPMean (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_PAPMean.csv' INTO TABLE wav_num_sig_PAPMean;
 
-CREATE EXTERNAL TABLE wav_num_sig_PAPSys (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_PAPSys (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_PAPSys.csv' INTO TABLE wav_num_sig_PAPSys;
 
-CREATE EXTERNAL TABLE wav_num_sig_PAWP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_PAWP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_PAWP.csv' INTO TABLE wav_num_sig_PAWP;
 
-CREATE EXTERNAL TABLE wav_num_sig_PULSE (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_PULSE (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_PULSE.csv' INTO TABLE wav_num_sig_PULSE;
 
-CREATE EXTERNAL TABLE wav_num_sig_PVCRatePerMinute (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_PVCRatePerMinute (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_PVCRatePerMinute.csv' INTO TABLE wav_num_sig_PVCRatePerMinute;
 
-CREATE EXTERNAL TABLE wav_num_sig_RAP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_RAP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_RAP.csv' INTO TABLE wav_num_sig_RAP;
 
-CREATE EXTERNAL TABLE wav_num_sig_RAP1_3 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_RAP1_3 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_RAP1-3.csv' INTO TABLE wav_num_sig_RAP1_3;
 
-CREATE EXTERNAL TABLE wav_num_sig_RAP2_3 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_RAP2_3 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_RAP2-3.csv' INTO TABLE wav_num_sig_RAP2_3;
 
-CREATE EXTERNAL TABLE wav_num_sig_RAP3_3 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_RAP3_3 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_RAP3-3.csv' INTO TABLE wav_num_sig_RAP3_3;
 
-CREATE EXTERNAL TABLE wav_num_sig_RESP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_RESP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_RESP.csv' INTO TABLE wav_num_sig_RESP;
 
-CREATE EXTERNAL TABLE wav_num_sig_RhythmStatus (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_RhythmStatus (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_RhythmStatus.csv' INTO TABLE wav_num_sig_RhythmStatus;
 
-CREATE EXTERNAL TABLE wav_num_sig_SpO2 (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_SpO2 (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_SpO2.csv' INTO TABLE wav_num_sig_SpO2;
 
-CREATE EXTERNAL TABLE wav_num_sig_SpO2L (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_SpO2L (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_SpO2L.csv' INTO TABLE wav_num_sig_SpO2L;
 
-CREATE EXTERNAL TABLE wav_num_sig_SpO2R (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_SpO2R (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_SpO2R.csv' INTO TABLE wav_num_sig_SpO2R;
 
-CREATE EXTERNAL TABLE wav_num_sig_STAVF (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STAVF (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STAVF.csv' INTO TABLE wav_num_sig_STAVF;
 
-CREATE EXTERNAL TABLE wav_num_sig_STAVL (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STAVL (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STAVL.csv' INTO TABLE wav_num_sig_STAVL;
 
-CREATE EXTERNAL TABLE wav_num_sig_STAVR (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STAVR (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STAVR.csv' INTO TABLE wav_num_sig_STAVR;
 
-CREATE EXTERNAL TABLE wav_num_sig_STI (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STI (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STI.csv' INTO TABLE wav_num_sig_STI;
 
-CREATE EXTERNAL TABLE wav_num_sig_STII (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STII (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STII.csv' INTO TABLE wav_num_sig_STII;
 
-CREATE EXTERNAL TABLE wav_num_sig_STIII (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STIII (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STIII.csv' INTO TABLE wav_num_sig_STIII;
 
-CREATE EXTERNAL TABLE wav_num_sig_STMCL (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STMCL (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STMCL.csv' INTO TABLE wav_num_sig_STMCL;
 
-CREATE EXTERNAL TABLE wav_num_sig_STV (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_STV (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_STV.csv' INTO TABLE wav_num_sig_STV;
 
-CREATE EXTERNAL TABLE wav_num_sig_TEMP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_TEMP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_TEMP.csv' INTO TABLE wav_num_sig_TEMP;
 
-CREATE EXTERNAL TABLE wav_num_sig_TempEsoph (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_TempEsoph (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_TempEsoph.csv' INTO TABLE wav_num_sig_TempEsoph;
 
-CREATE EXTERNAL TABLE wav_num_sig_TempRect (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_TempRect (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_TempRect.csv' INTO TABLE wav_num_sig_TempRect;
 
-CREATE EXTERNAL TABLE wav_num_sig_UAP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_UAP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_UAP.csv' INTO TABLE wav_num_sig_UAP;
 
-CREATE EXTERNAL TABLE wav_num_sig_UAPDias (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_UAPDias (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_UAPDias.csv' INTO TABLE wav_num_sig_UAPDias;
 
-CREATE EXTERNAL TABLE wav_num_sig_UAPMean (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_UAPMean (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_UAPMean.csv' INTO TABLE wav_num_sig_UAPMean;
 
-CREATE EXTERNAL TABLE wav_num_sig_UAPSys (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_UAPSys (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_UAPSys.csv' INTO TABLE wav_num_sig_UAPSys;
 
-CREATE EXTERNAL TABLE wav_num_sig_UVP (RECORD_ID INT COMMENT 'ID of the record data.',
+CREATE TABLE wav_num_sig_UVP (RECORD_ID INT COMMENT 'ID of the record data.',
        SAMPLE_ID BIGINT COMMENT 'ID of A Sample.',
        AMPLITUDE INT COMMENT 'Amplitude of the sample.' ) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_sig_UVP.csv' INTO TABLE wav_num_sig_UVP;
 
-CREATE EXTERNAL TABLE wav_num_signals (SIGNAL_ID INT COMMENT 'Synthetic ID of the Signal data used as Primary Key.',
+CREATE TABLE wav_num_signals (SIGNAL_ID INT COMMENT 'Synthetic ID of the Signal data used as Primary Key.',
        RECORD_ID INT COMMENT 'ID used to idendity the record.',
        RAW_FILE VARCHAR(60) COMMENT 'Name of the File containing raw signal data.',
        SIGNAL_NAME VARCHAR(20) COMMENT 'The type of signal: I, II, HR_1/2, RESP_1/3, etc.',
@@ -356,4 +353,3 @@ CREATE EXTERNAL TABLE wav_num_signals (SIGNAL_ID INT COMMENT 'Synthetic ID of th
        BLOCK_SIZE INT COMMENT 'Currently unused.',
        DESCRIPTION VARCHAR(4000) COMMENT 'A short description of the type of the signal.') ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_signals.csv' INTO TABLE wav_num_signals;
-
