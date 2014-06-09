@@ -4,16 +4,17 @@
 -- ALL RIGHTS RESERVED
 
 DROP PROCEDURE view_average_num_sig;
-CREATE PROCEDURE view_average_num_sig (IN SIG_NAME VARCHAR(10)) 
+CREATE PROCEDURE view_average_num_sig (IN SIG_NAME VARCHAR(10), IN NOISE_C VARCHAR(3)) 
 	LANGUAGE SQLSCRIPT AS
 	--DEFAULT SCHEMA "MIMIC2V26"
 BEGIN
 DECLARE view_exists INT := 0;
+DECLARE query_string STRING;
 SELECT COUNT(*) INTO view_exists FROM "VIEWS" WHERE "SCHEMA_NAME" = 'MIMIC2V26' AND "VIEW_NAME" = 'AVG_NUM_SIG_'  || :SIG_NAME;
 IF :view_exists = 1 THEN
 	EXEC 'DROP VIEW "MIMIC2V26"."AVG_NUM_SIG_' || :SIG_NAME || '"';
 END IF;
-EXEC 'CREATE VIEW "MIMIC2V26"."AVG_NUM_SIG_' || :SIG_NAME || '" AS 
+query_string := 'CREATE VIEW "MIMIC2V26"."AVG_NUM_SIG_' || :SIG_NAME || '" AS 
 ( SELECT
 	"t"."SUBJECT_ID",
 	"t"."RECORD_ID",
@@ -24,12 +25,18 @@ EXEC 'CREATE VIEW "MIMIC2V26"."AVG_NUM_SIG_' || :SIG_NAME || '" AS
 			"MIMIC2V26"."wav_num_records"."RECORD_ID",
 			AVG("MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."AMPLITUDE") AS "AVG_AMP"
 			FROM "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '", "MIMIC2V26"."wav_num_records"
-			WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."RECORD_ID"
-				AND "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."AMPLITUDE" > 0
+			WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."RECORD_ID" ';
+	IF LOWER(:NOISE_C) = 'on' THEN
+		query_string := query_string || ' AND "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."AMPLITUDE" > 0';
+	ELSE
+		query_string := query_string || ' AND "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."AMPLITUDE" > -32768';
+	END IF;
+	query_string := query_string || '
 			GROUP BY "MIMIC2V26"."wav_num_records"."SUBJECT_ID", "MIMIC2V26"."wav_num_records"."RECORD_ID"
 		) AS "t",
 		"MIMIC2V26"."wav_num_signals"
 	WHERE "t"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
 		AND "MIMIC2V26"."wav_num_signals"."SIGNAL_NAME" = ''' || :SIG_NAME || '''
 )';
+EXEC query_string;
 END;

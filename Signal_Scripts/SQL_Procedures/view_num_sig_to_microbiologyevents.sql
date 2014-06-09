@@ -4,13 +4,14 @@
 -- ALL RIGHTS RESERVED
 
 DROP PROCEDURE view_num_sig_to_microbiologyevents;
-CREATE PROCEDURE view_num_sig_to_microbiologyevents (IN SIG_NAME VARCHAR(10), IN SUBJ_ID INTEGER) 
+CREATE PROCEDURE view_num_sig_to_microbiologyevents (IN SIG_NAME VARCHAR(10), IN SUBJ_ID INTEGER, IN NOISE_C VARCHAR(3)) 
 	LANGUAGE SQLSCRIPT AS
 	--DEFAULT SCHEMA "MIMIC2V26"
 BEGIN
 
 DECLARE found_signal INT := 0;
 DECLARE found_clinical INT := 0;
+DECLARE query_string STRING;
 	
 SELECT COUNT(*) INTO found_signal FROM "MIMIC2V26"."wav_num_records","MIMIC2V26"."wav_num_signals"
 	WHERE "SUBJECT_ID" = :SUBJ_ID
@@ -35,7 +36,7 @@ ELSEIF :found_signal = 0 THEN
 		FROM "MIMIC2V26"."wav_num_signals", "MIMIC2V26"."wav_num_records"
 		WHERE "MIMIC2V26"."wav_num_signals"."RECORD_ID" = "MIMIC2V26"."wav_num_records"."RECORD_ID"
 			AND "MIMIC2V26"."wav_num_records"."SUBJECT_ID" = :SUBJ_ID
-			ORDER BY "MIMIC2V26"."wav_num_signals"."RECORD_ID";
+		ORDER BY "MIMIC2V26"."wav_num_signals"."RECORD_ID";
 	SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."microbiologyevents" WHERE "SUBJECT_ID" IN
 		( SELECT DISTINCT "SUBJECT_ID" FROM "MIMIC2V26"."wav_num_records", "MIMIC2V26"."wav_num_signals"
 			WHERE "MIMIC2V26"."wav_num_records"."RECORD_ID" = "MIMIC2V26"."wav_num_signals"."RECORD_ID"
@@ -49,7 +50,7 @@ ELSE
 	IF :view_exists = 1 THEN
 		EXEC 'DROP VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_MICROBIOLOGYEVENTS_FOR_' || :SUBJ_ID || '"';
 	END IF;
-	EXEC 'CREATE VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_MICROBIOLOGYEVENTS_FOR_' || :SUBJ_ID || '" AS (
+	query_string := 'CREATE VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_MICROBIOLOGYEVENTS_FOR_' || :SUBJ_ID || '" AS (
 		( SELECT
 			"t"."SUBJECT_ID",
 			"t"."RECORD_ID" AS "SIG_RECORD_ID",
@@ -84,8 +85,11 @@ ELSE
 								
 				) AS "t" 
 		
-				WHERE "t"."RECORD_ID" = "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."RECORD_ID" 
-					AND "AMPLITUDE" > 0
+				WHERE "t"."RECORD_ID" = "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."RECORD_ID" ';
+	IF LOWER(:NOISE_C) = 'on' THEN
+		query_string := query_string || ' AND "AMPLITUDE" > 0';
+	END IF;
+	query_string := query_string || '
 		)
 		UNION
 		( SELECT
@@ -136,5 +140,6 @@ ELSE
 					AND "CHARTTIME" is not null
 		)
 	)';
+	EXEC query_string;
 END IF;
 END

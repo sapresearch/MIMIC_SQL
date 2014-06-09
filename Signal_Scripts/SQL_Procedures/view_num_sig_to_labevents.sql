@@ -4,13 +4,14 @@
 -- ALL RIGHTS RESERVED
 
 DROP PROCEDURE view_num_sig_to_labevents;
-CREATE PROCEDURE view_num_sig_to_labevents (IN SIG_NAME VARCHAR(10), IN SUBJ_ID INTEGER) 
+CREATE PROCEDURE view_num_sig_to_labevents (IN SIG_NAME VARCHAR(10), IN SUBJ_ID INTEGER, IN NOISE_C VARCHAR(3)) 
 	LANGUAGE SQLSCRIPT AS
 	--DEFAULT SCHEMA "MIMIC2V26"
 BEGIN
 
 DECLARE found_signal INT := 0;
 DECLARE found_clinical INT := 0;
+DECLARE query_string STRING;
 	
 SELECT COUNT(*) INTO found_signal FROM "MIMIC2V26"."wav_num_records","MIMIC2V26"."wav_num_signals"
 	WHERE "SUBJECT_ID" = :SUBJ_ID
@@ -49,12 +50,12 @@ ELSE
 	IF :view_exists = 1 THEN
 		EXEC 'DROP VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_LABEVENTS_FOR_' || :SUBJ_ID || '"';
 	END IF;
-	EXEC 'CREATE VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_LABEVENTS_FOR_' || :SUBJ_ID || '" AS (
+	query_string := 'CREATE VIEW "MIMIC2V26"."JOIN_NUM_SIG_' || :SIG_NAME || '_TO_LABEVENTS_FOR_' || :SUBJ_ID || '" AS (
 		( SELECT
 			"t"."SUBJECT_ID",
 			"t"."RECORD_ID" as "SIG_RECORD_ID",
 			ADD_SECONDS("t"."RECORD_TIME",
-			"MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."SAMPLE_ID"/"t"."SAMPLE_FREQ") as "TIME_SERIES",
+			"MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."SAMPLE_ID"/"t"."SAMPLE_FREQ") AS "TIME_SERIES",
 			''[SIGNAL DATA]'' as "CATEGORY",
 			"MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."AMPLITUDE"/"t"."ADC_GAIN" AS "AMPLITUDE",
 			null as "TEST_NAME",
@@ -85,8 +86,11 @@ ELSE
 								
 				) AS "t" 
 		
-				WHERE "t"."RECORD_ID" = "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."RECORD_ID" 
-				AND "AMPLITUDE" > 0
+				WHERE "t"."RECORD_ID" = "MIMIC2V26"."wav_num_sig_' || :SIG_NAME || '"."RECORD_ID" ';
+	IF LOWER(:NOISE_C) = 'on' THEN
+		query_string := query_string || ' AND "AMPLITUDE" > 0';
+	END IF;
+	query_string := query_string || '
 		)
 		UNION
 		( SELECT
@@ -113,5 +117,6 @@ ELSE
 				AND "x"."SUBJECT_ID" = ' || :SUBJ_ID || '
 		)
 	)';
+	EXEC query_string;
 END IF;
 END
