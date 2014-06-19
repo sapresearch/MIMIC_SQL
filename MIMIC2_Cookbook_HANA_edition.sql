@@ -34,9 +34,9 @@ group by bucket order by bucket
 -- # 2.	Height Histogram
 
 select bucket, count(*) from (
-   	select "value1num", floor("value1num" * 200/ (200 - 0)) as bucket
+   	select "VALUE1NUM", floor("VALUE1NUM" * 200/ (200 - 0)) as bucket
    	from "MIMIC2V26"."chartevents"
-   	where "ITEMID" = 920 and "value1num" is not null and "value1num" between 1 and 499) x
+   	where "ITEMID" = 920 and "VALUE1NUM" is not null and "VALUE1NUM" between 1 and 499) x
 group by bucket order by bucket
 
 
@@ -106,7 +106,7 @@ group by bucket order by bucket;
 -- # 10.	RR interval Histogram
 
 select bucket, count(*) from (
-   	select "value1num", width_bucket("ce"."VALUE1NUM", 0, 130, 1400) as bucket
+   	select "VALUE1NUM", width_bucket("ce"."VALUE1NUM", 0, 130, 1400) as bucket
    	from "MIMIC2V26"."chartevents" "ce", "MIMIC2V26"."d_patients" "dp"
    	where "ITEMID" in (219, 615, 618) and "ce"."SUBJECT_ID" = "dp"."SUBJECT_ID" and months_between("dp"."DOB", "ce"."CHARTTIME")/12 > 15)
 group by bucket order by bucket;
@@ -335,19 +335,20 @@ create type AGE_BIN_RESULTS as table (SUBJECT_ID INTEGER, VAR_TYPE INTEGER, VAR_
 -- Signature table that the PAL function will use
 drop table AGE_BIN_SIGNATURE;
 create column table AGE_BIN_SIGNATURE (ID INTEGER, TYPENAME VARCHAR(100), DIRECTION VARCHAR(100));
-insert into AGE_BIN_SIGNATURE values (1, 'AGE_BIN_DATA', 'in');
-insert into AGE_BIN_SIGNATURE values (2, 'AGE_BIN_PARAMS', 'in');
-insert into AGE_BIN_SIGNATURE values (3, 'AGE_BIN_RESULTS', 'out');
+insert into AGE_BIN_SIGNATURE values (1, '_SYS_AFL.AGE_BIN_DATA', 'in');
+insert into AGE_BIN_SIGNATURE values (2, '_SYS_AFL.AGE_BIN_PARAMS', 'in');
+insert into AGE_BIN_SIGNATURE values (3, '_SYS_AFL.AGE_BIN_RESULTS', 'out');
  
 -- Create the procedure
 drop procedure _SYS_AFL.AGE_BIN;
 drop type _SYS_AFL.AGE_BIN__TT_P1;
 drop type _SYS_AFL.AGE_BIN__TT_P2;
 drop type _SYS_AFL.AGE_BIN__TT_P3;
+call SYSTEM.AFL_WRAPPER_ERASER('AGE_BIN');
 call SYSTEM.AFL_WRAPPER_GENERATOR('AGE_BIN','AFLPAL','BINNING', AGE_BIN_SIGNATURE);
  
 -- Use the schema MIMIC2 for the following instructions
-set schema MIMIC2;
+set schema MIMIC2V26;
  
 -- Create a view to select specific fields from a table.
 -- This allows a fine-grained control over what will be used in the algorithm instead of the complete tables
@@ -413,28 +414,29 @@ create type HEIGHT_BIN_RESULTS as table (SUBJECT_ID INTEGER, VAR_TYPE INTEGER, V
 -- Signature table that the PAL function will use
 drop table HEIGHT_BIN_SIGNATURE;
 create column table HEIGHT_BIN_SIGNATURE (ID INTEGER, TYPENAME VARCHAR(100), DIRECTION VARCHAR(100));
-insert into HEIGHT_BIN_SIGNATURE values (1, 'HEIGHT_BIN_DATA', 'in');
-insert into HEIGHT_BIN_SIGNATURE values (2, 'HEIGHT_BIN_PARAMS', 'in');
-insert into HEIGHT_BIN_SIGNATURE values (3, 'HEIGHT_BIN_RESULTS', 'out');
+insert into HEIGHT_BIN_SIGNATURE values (1, '_SYS_AFL.HEIGHT_BIN_DATA', 'in');
+insert into HEIGHT_BIN_SIGNATURE values (2, '_SYS_AFL.HEIGHT_BIN_PARAMS', 'in');
+insert into HEIGHT_BIN_SIGNATURE values (3, '_SYS_AFL.HEIGHT_BIN_RESULTS', 'out');
  
 -- Create the procedure
 drop procedure _SYS_AFL.HEIGHT_BIN;
 drop type _SYS_AFL.HEIGHT_BIN__TT_P1;
 drop type _SYS_AFL.HEIGHT_BIN__TT_P2;
 drop type _SYS_AFL.HEIGHT_BIN__TT_P3;
+call SYSTEM.AFL_WRAPPER_ERASER('HEIGHT_BIN','AFLPAL','BINNING', HEIGHT_BIN_SIGNATURE);
 call SYSTEM.AFL_WRAPPER_GENERATOR('HEIGHT_BIN','AFLPAL','BINNING', HEIGHT_BIN_SIGNATURE);
  
 -- Use the schema MIMIC2 for the following instructions
-set schema MIMIC2;
+set schema MIMIC2V26;
  
 -- Create a view to select specific fields from a table.
 -- This allows a fine-grained control over what will be used in the algorithm instead of the complete tables
 -- and also create relevant features that are not normally in the database
 drop view V_HEIGHT_DATA;
 create view V_HEIGHT_DATA as
-   	select "subject_id" as SUBJECT_ID, "value1num" as H
+   	select "SUBJECT_ID" as SUBJECT_ID, "VALUE1NUM" as H
    	from "MIMIC2V26"."chartevents"
-   	where "itemid" = 920 and "value1num" is not null and "value1num" between 1 and 499;
+   	where "ITEMID" = 920 and "VALUE1NUM" is not null and "VALUE1NUM" between 1 and 499;
    	
 -- Create a table for the function parameters
 drop table #HEIGHT_PARAMS;
@@ -491,19 +493,20 @@ create type BUN_BIN_RESULTS as table (SUBJECT_ID INTEGER, VAR_TYPE INTEGER, VAR_
 -- Signature table that the PAL function will use
 drop table BUN_BIN_SIGNATURE;
 create column table BUN_BIN_SIGNATURE (ID INTEGER, TYPENAME VARCHAR(100), DIRECTION VARCHAR(100));
-insert into BUN_BIN_SIGNATURE values (1, 'BUN_BIN_DATA', 'in');
-insert into BUN_BIN_SIGNATURE values (2, 'BUN_BIN_PARAMS', 'in');
-insert into BUN_BIN_SIGNATURE values (3, 'BUN_BIN_RESULTS', 'out');
+insert into BUN_BIN_SIGNATURE values (1, '_SYS_AFL.BUN_BIN_DATA', 'in');
+insert into BUN_BIN_SIGNATURE values (2, '_SYS_AFL.BUN_BIN_PARAMS', 'in');
+insert into BUN_BIN_SIGNATURE values (3, '_SYS_AFL.BUN_BIN_RESULTS', 'out');
  
 -- Create the procedure
 drop procedure _SYS_AFL.BUN_BIN;
 drop type _SYS_AFL.BUN_BIN__TT_P1;
 drop type _SYS_AFL.BUN_BIN__TT_P2;
 drop type _SYS_AFL.BUN_BIN__TT_P3;
+call SYSTEM.AFL_WRAPPER_ERASER('BUN_BIN','AFLPAL','BINNING', BUN_BIN_SIGNATURE);
 call SYSTEM.AFL_WRAPPER_GENERATOR('BUN_BIN','AFLPAL','BINNING', BUN_BIN_SIGNATURE);
  
 -- Use the schema MIMIC2 for the following instructions
-set schema MIMIC2;
+set schema MIMIC2V26;
  
 -- Create a view to select specific fields from a table.
 -- This allows a fine-grained control over what will be used in the algorithm instead of the complete tables
@@ -512,7 +515,7 @@ drop view V_BUN_DATA;
 create view V_BUN_DATA as
    	select "le"."SUBJECT_ID" as SUBJECT_ID, "le"."VALUENUM" as BUN
    	from "MIMIC2V26"."labevents" "le", "MIMIC2V26"."d_patients" "dp"
-   	where "itemid" in (50177) and "le"."SUBJECT_ID" = "dp"."SUBJECT_ID" and months_between("dp"."DOB", "le"."CHARTTIME")/12 > 15 and "le"."VALUENUM" is not null;
+   	where "ITEMID" in (50177) and "le"."SUBJECT_ID" = "dp"."SUBJECT_ID" and months_between("dp"."DOB", "le"."CHARTTIME")/12 > 15 and "le"."VALUENUM" is not null;
    	
 -- Create a table for the function parameters
 drop table #BUN_PARAMS;
@@ -561,29 +564,30 @@ create type CE_KM_CENTER_POINTS as table (CE_ID INTEGER, VALUE1NUM DOUBLE, VALUE
  
 drop table CE_KM_SIGNATURE;
 create column table CE_KM_SIGNATURE (ID INTEGER, TYPENAME VARCHAR(100), DIRECTION VARCHAR(100));
-insert into CE_KM_SIGNATURE values (1, 'CE_KM_DATA', 'in');
-insert into CE_KM_SIGNATURE values (2, 'CE_KM_PARAMS', 'in');
-insert into CE_KM_SIGNATURE values (3, 'CE_KM_RESULTS', 'out');
-insert into CE_KM_SIGNATURE values (4, 'CE_KM_CENTER_POINTS', 'out');
+insert into CE_KM_SIGNATURE values (1, '_SYS_AFL.CE_KM_DATA', 'in');
+insert into CE_KM_SIGNATURE values (2, '_SYS_AFL.CE_KM_PARAMS', 'in');
+insert into CE_KM_SIGNATURE values (3, '_SYS_AFL.CE_KM_RESULTS', 'out');
+insert into CE_KM_SIGNATURE values (4, '_SYS_AFL.CE_KM_CENTER_POINTS', 'out');
  
 drop procedure _SYS_AFL.CE_KM;
 drop type _SYS_AFL.CE_KM__TT_P1;
 drop type _SYS_AFL.CE_KM__TT_P2;
 drop type _SYS_AFL.CE_KM__TT_P3;
 drop type _SYS_AFL.CE_KM__TT_P4;
+call SYSTEM.AFL_WRAPPER_ERASER('CE_KM','AFLPAL','KMEANS', CE_KM_SIGNATURE);
 call SYSTEM.AFL_WRAPPER_GENERATOR('CE_KM','AFLPAL','KMEANS', CE_KM_SIGNATURE);
  
 -- Use the schema MIMIC2 for the following instructions
-set schema MIMIC2;
+set schema MIMIC2V26;
  
 -- Create a view to select specific fields from a table.
 -- This allows a fine-grained control over what will be used in the algorithm instead of the complete tables
 -- and also create relevant features that are not normally in the database
 drop view V_KM_DATA;
 create view V_KM_DATA as
-   	select "subject_id" as SUBJECT_ID, "value1num" as VALUE1NUM, "value2num" as VALUE2NUM
+   	select "SUBJECT_ID" as SUBJECT_ID, "VALUE1NUM" as VALUE1NUM, "VALUE2NUM" as VALUE2NUM
    	from "MIMIC2V26"."chartevents"
-   	where "value1num" is not null and "value2num" is not null;
+   	where "VALUE1NUM" is not null and "VALUE2NUM" is not null;
    	
 -- Create a table for the function parameters
 drop table #KM_PARAMS;
@@ -638,9 +642,9 @@ create type CE_AD_RESULTS as table (SUBJECT_ID INTEGER, VALUE1NUM DOUBLE, VALUE2
 -- Signature table that the PAL function will use
 drop table CE_AD_SIGNATURE;
 create column table CE_AD_SIGNATURE (ID INTEGER, TYPENAME VARCHAR(100), DIRECTION VARCHAR(100));
-insert into CE_AD_SIGNATURE values (1, 'CE_AD_DATA', 'in');
-insert into CE_AD_SIGNATURE values (2, 'CE_AD_PARAMS', 'in');
-insert into CE_AD_SIGNATURE values (3, 'CE_AD_RESULTS', 'out');
+insert into CE_AD_SIGNATURE values (1, '_SYS_AFL.CE_AD_DATA', 'in');
+insert into CE_AD_SIGNATURE values (2, '_SYS_AFL.CE_AD_PARAMS', 'in');
+insert into CE_AD_SIGNATURE values (3, '_SYS_AFL.CE_AD_RESULTS', 'out');
  
 -- Create the procedure
 drop procedure _SYS_AFL.CE_AD;
@@ -650,16 +654,16 @@ drop type _SYS_AFL.CE_AD__TT_P3;
 call SYSTEM.AFL_WRAPPER_GENERATOR('CE_AD','AFLPAL','ANOMALYDETECTION', CE_AD_SIGNATURE);
  
 -- Use the schema MIMIC2 for the following instructions
-set schema MIMIC2;
+set schema MIMIC2V26;
  
 -- Create a view to select specific fields from a table.
 -- This allows a fine-grained control over what will be used in the algorithm instead of the complete tables
 -- and also create relevant features that are not normally in the database
 drop view V_AD_DATA;
 create view V_AD_DATA as
-   	select "subject_id" as SUBJECT_ID, "value1num" as VALUE1NUM, "value2num" as VALUE2NUM
+   	select "SUBJECT_ID" as SUBJECT_ID, "VALUE1NUM" as VALUE1NUM, "VALUE2NUM" as VALUE2NUM
    	from "MIMIC2V26"."chartevents"
-   	where "value1num" is not null and "value2num" is not null;
+   	where "VALUE1NUM" is not null and "VALUE2NUM" is not null;
    	
 -- Create a table for the function parameters
 drop table #AD_PARAMS;
