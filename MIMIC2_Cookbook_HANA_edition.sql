@@ -185,7 +185,7 @@ drop procedure avg_height;
 create procedure avg_height(IN input1 height_only_in, OUT result output)
 language RLANG as
 begin
-result <- as.data.frame(mean(input1$value1num));
+result <- as.data.frame(mean(input1$VALUE1NUM));
 names(result) <- c("MEAN");
 end;
 
