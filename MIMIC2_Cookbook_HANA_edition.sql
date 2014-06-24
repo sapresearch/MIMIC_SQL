@@ -618,9 +618,8 @@ update #KM_PARAMS set DOUBLEARGS=0.0001 where name='EXIT_THRESHOLD';
 truncate table KM_RESULTS;
 truncate table KM_CENTER_POINTS;
  
-call _SYS_AFL.CE_KM(V_KM_DATA, KM_PARAMS, KM_RESULTS, KM_CENTER_POINTS) with OVERVIEW;
- 
-
+call _SYS_AFL.CE_KM(V_KM_DATA,#KM_PARAMS, KM_RESULTS, KM_CENTER_POINTS) with OVERVIEW;
+ select KM_RESULTS.VAR_TYPE, count(*) from KM_RESULTS group by KM_RESULTS.VAR_TYPE order by KM_RESULTS.VAR_TYPE；
 -- # b.	Anomaly Detection
 
 -- Tells the system to use the schema _SYS_AFL. This is more or less similar to a namespace. Everything following this will apply to this schema
