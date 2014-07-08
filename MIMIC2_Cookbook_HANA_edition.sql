@@ -256,9 +256,6 @@ create procedure "MIMIC2V26"."PROC_DEATH_TRAIN_PREDICT" (in input1 "MIMIC2V26"."
 language RLANG as
 begin
    	library("kernlab");
-   	library("RODBC");
- 
-   	myconn <-odbcConnect("hana", uid="SYSTEM", pwd="HANA4ever");
  
    	input_training <- input1 ;
    	meta_cols <- c("DOB", "DOD", "HOSPITAL_ADMIT_DT", "DEAD", "training", "CPREDICT", "CPROB" ) ;
