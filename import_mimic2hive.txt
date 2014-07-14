@@ -1,6 +1,6 @@
 
 CREATE TABLE wav_num_records (RECORD_ID INT COMMENT 'Metadata for the MIMIC-II waveforms records from PhysioNet',
-       FILENAME VARCHAR(40) COMMENT 'The header filename for the record.',
+       FILENAME STRING COMMENT 'The header filename for the record.',
        SUBJECT_ID INT COMMENT 'The MIMIC-II Subject ID (in the clinical database) of the patient from whom the record was recorded.',
        RECORD_TIME TIMESTAMP COMMENT 'The absolute time of the beginning of the WFDB record (shifted in accordance with the MIMIC-II clinical database)',
        NUM_OF_SIGNALS SMALLINT COMMENT 'The number of signals in the WFDB record.',
@@ -337,19 +337,19 @@ LOAD DATA INPATH '/data/hana-csv/wav_num_sig_UVP.csv' INTO TABLE wav_num_sig_UVP
 
 CREATE TABLE wav_num_signals (SIGNAL_ID INT COMMENT 'Synthetic ID of the Signal data used as Primary Key.',
        RECORD_ID INT COMMENT 'ID used to idendity the record.',
-       RAW_FILE VARCHAR(60) COMMENT 'Name of the File containing raw signal data.',
-       SIGNAL_NAME VARCHAR(20) COMMENT 'The type of signal: I, II, HR_1/2, RESP_1/3, etc.',
+       RAW_FILE STRING COMMENT 'Name of the File containing raw signal data.',
+       SIGNAL_NAME STRING COMMENT 'The type of signal: I, II, HR_1/2, RESP_1/3, etc.',
        STORAGE_FORMAT SMALLINT COMMENT 'Specifies the storage format of the signal.',
        SAMPLES_PER_FRAME SMALLINT COMMENT 'If the signal was sampled at some INT multiple, n, of the base sampling frequency, each frame contains n samples of the signal, and the value specified in this field is also n.',
        SKEW INT COMMENT 'When a multitrack analog tape recording is digitized and the azimuth of the playback head does not match that of the recording head, the skew between signals can sometimes determined.',
        BYTE_OFFSET INT COMMENT 'Currently unused.',
        ADC_GAIN DOUBLE COMMENT 'The amplification, prior to digitization, of the signal.',
        BASELINE DOUBLE COMMENT 'The baseline is an INT that specifies the sample value corresponding to 0 physical units. If absent, the baseline is taken to be equal to the ADC zero.',
-       UNITS VARCHAR(10) COMMENT 'The physical dimensions of the values in the signal.',
+       UNITS STRING COMMENT 'The physical dimensions of the values in the signal.',
        ADC_RESOLUTION SMALLINT COMMENT 'The resolution of the A/D conversion of the signal in number of bits.',
        ADC_ZERO INT COMMENT 'The value produced by the A/D conversion given a 0-volt input for the signal.',
        INITIAL_VALUE INT COMMENT 'The first sample value of the signal, in non-physical units (i.e. as an INT-encoded number).',
        CHECKSUM INT COMMENT 'The checksum for the signal.',
        BLOCK_SIZE INT COMMENT 'Currently unused.',
-       DESCRIPTION VARCHAR(4000) COMMENT 'A short description of the type of the signal.') ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+       DESCRIPTION STRING COMMENT 'A short description of the type of the signal.') ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 LOAD DATA INPATH '/data/hana-csv/wav_num_signals.csv' INTO TABLE wav_num_signals;
