@@ -1,0 +1,18 @@
+DROP TYPE icd9set_t;
+CREATE TYPE icd9set_t AS TABLE (
+	"SUBJECT_ID" INTEGER CS_INT NOT NULL ,
+	"HADM_ID" INTEGER CS_INT NOT NULL ,
+	"SEQUENCE" INTEGER CS_INT NOT NULL ,
+	"CODE" VARCHAR(100) NOT NULL ,
+	"DESCRIPTION" VARCHAR(255)
+);
+
+DROP PROCEDURE return_table;
+CREATE PROCEDURE return_table (IN q_subject_id INTEGER, OUT v_ret icd9set_t)
+	LANGUAGE SQLSCRIPT READS SQL DATA WITH RESULT VIEW return_view AS
+
+BEGIN
+    v_ret = SELECT * FROM "MIMIC2V26"."icd9" WHERE "MIMIC2V26"."icd9"."SUBJECT_ID"=:q_subject_id;
+END;
+
+SELECT * FROM return_view WITH PARAMETERS('placeholder' = ('$$q_subject_id$$', '44'));
