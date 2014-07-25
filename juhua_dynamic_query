@@ -1,0 +1,101 @@
+-- retrieve all the name of records for a single patient
+
+drop type patient_records;
+create type patient_records as table ("subject_id" INTEGER,"record_time" TIMESTAMP, "record_id" INTEGER, "signal_name" varchar(30)); 
+
+
+drop procedure retrieve_patient_medical_records;
+create procedure retrieve_patient_medical_records(in patient_id int, out patient_medical_records patient_records)
+	LANGUAGE SQLSCRIPT READS SQL DATA WITH RESULT VIEW record_view AS
+	
+begin
+	patient_medical_records=
+	select
+		"SYSTEM"."HIVE_wav_num_records"."subject_id",
+		"SYSTEM"."HIVE_wav_num_records"."record_time",
+		"SYSTEM"."HIVE_wav_num_signals"."record_id", 
+		"SYSTEM"."HIVE_wav_num_signals"."signal_name"
+	from 
+		"SYSTEM"."HIVE_wav_num_records",
+		"SYSTEM"."HIVE_wav_num_signals"
+	where 
+		"SYSTEM"."HIVE_wav_num_signals"."record_id" = "SYSTEM"."HIVE_wav_num_records"."record_id" 
+		and "SYSTEM"."HIVE_wav_num_records"."subject_id"=:patient_id;
+end;
+
+
+SELECT * FROM record_view WITH PARAMETERS('placeholder' = ('$$patient_id$$', '6407'));
+
+
+
+
+--Extract arbitrary signal pairs:
+
+create procedure EXTRACT_SIGNALS_PAIRS(in record_id int, in sig_name1 varchar(10), in sig_name2 varchar(10))
+language sqlscript as 
+begin
+
+EXEC 'CREATE column TABLE ' || lower(:sig_name1) ||'_'|| lower(:sig_name2) || ' as (
+SELECT 
+"SIG1"."amplitude" as "' || lower(:sig_name1) || '",
+"SIG2"."amplitude" as "' || lower(:sig_name2) || '"
+
+FROM 
+(SELECT * FROM "SYSTEM"."HIVE_wav_num_sig_' || lower(:sig_name1) || '" WHERE "SYSTEM"."HIVE_wav_num_sig_' || lower(:sig_name1) || '"."record_id" = '|| :record_id ||' order by "SYSTEM"."HIVE_wav_num_sig_' || lower(:sig_name1) || '"."sample_id") AS "SIG1",
+(SELECT * FROM "SYSTEM"."HIVE_wav_num_sig_' || lower(:sig_name2) || '" WHERE "SYSTEM"."HIVE_wav_num_sig_' || lower(:sig_name2) || '"."record_id" = '|| :record_id ||' order by "SYSTEM"."HIVE_wav_num_sig_' || lower(:sig_name2) || '"."sample_id") AS "SIG2"
+
+WHERE 
+"SIG1"."sample_id"="SIG2"."sample_id" 
+and "SIG1"."amplitude">0  
+and "SIG2"."amplitude">0
+
+ORDER BY "SIG1"."sample_id")';
+
+end;
+
+call EXTRACT_SIGNALS_PAIRS(686, 'pulse','HR') with overview;
+
+
+--Extract same signal with arbitrary record_id:
+
+DROP PROCEDURE RETRIEVE_SIG_RECORD_IDS;
+
+CREATE PROCEDURE RETRIEVE_SIG_RECORD_IDS(IN RECORD_ID1 INT, IN RECORD_ID2 INT, IN SIG VARCHAR(10)) 
+LANGUAGE SQLSCRIPT AS 
+
+BEGIN 
+
+DECLARE ADC_GAIN1 INT;
+DECLARE ADC_GAIN2 INT;
+
+SELECT "SYSTEM"."HIVE_wav_num_signals"."adc_gain" INTO ADC_GAIN1 
+FROM "SYSTEM"."HIVE_wav_num_signals" 
+WHERE "SYSTEM"."HIVE_wav_num_signals"."record_id" = :RECORD_ID1 
+	AND "SYSTEM"."HIVE_wav_num_signals"."signal_name"= :SIG;
+
+SELECT "SYSTEM"."HIVE_wav_num_signals"."adc_gain" INTO ADC_GAIN2 
+FROM "SYSTEM"."HIVE_wav_num_signals" 
+WHERE "SYSTEM"."HIVE_wav_num_signals"."record_id" = :RECORD_ID2 
+	AND "SYSTEM"."HIVE_wav_num_signals"."signal_name"= :SIG;
+
+
+CREATE column TABLE SIG_RECORDID ( RECORD_ID INTEGER, AMPLITUDE INTEGER);
+
+EXEC 'INSERT INTO SIG_RECORDID (
+select 
+"SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '"."record_id", 
+"SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '"."amplitude"/ ' || :ADC_GAIN1 || ' 
+from "SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '" 
+where "SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '"."record_id"= ' || :RECORD_ID1 ||')';
+
+EXEC 'INSERT INTO SIG_RECORDID(
+select 
+"SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '"."record_id", 
+"SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '"."amplitude"/ ' || :ADC_GAIN2 || ' 
+from "SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '" 
+where "SYSTEM"."HIVE_wav_num_sig_' || lower(:SIG) || '"."record_id"=' || :RECORD_ID2 ||')';
+
+
+END;
+DROP TABLE SIG_RECORDID;
+call RETRIEVE_SIG_RECORD_IDS(686,4531,'HR') with overview;
