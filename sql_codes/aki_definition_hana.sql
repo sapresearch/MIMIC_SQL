@@ -47,6 +47,7 @@ WITH "population" AS
 		FROM "uo_time_span" "uo" 
 		LEFT JOIN "MIMIC2V26"."icustay_detail" "icud" ON "uo"."ICUSTAY_ID" = "icud"."ICUSTAY_ID"
 		WHERE "uo"."TIME_SPAN" IS NOT NULL
+			AND "uo"."TIME_SPAN" != 0
 	)
 
 , "aki_onset_1" AS
