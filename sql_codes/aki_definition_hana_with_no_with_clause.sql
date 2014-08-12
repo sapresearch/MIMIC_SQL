@@ -3,7 +3,7 @@
 SELECT DISTINCT 
 	"ICUSTAY_ID"
 	, "onset_time"
-	, "uo_mean"
+	--, "uo_mean"
 	, CASE WHEN "uo_mean"< 0.5 THEN 1 ELSE 0 END AS "aki_flg"
 	FROM ( SELECT 
 		"a"."ICUSTAY_ID"
@@ -86,5 +86,5 @@ SELECT DISTINCT
 			WHERE 
 				"b"."CHARTTIME" BETWEEN "a"."CHARTTIME" AND ADD_SECONDS("a"."CHARTTIME", 60*60*6)
 			GROUP BY "a"."ICUSTAY_ID", "a"."CHARTTIME"
-			--ORDER BY 1,2
+			--ORDER BY 3 desc
 	);
