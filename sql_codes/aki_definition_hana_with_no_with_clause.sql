@@ -10,19 +10,20 @@ SELECT DISTINCT
 		,"a"."CHARTTIME" AS "onset_time"
 		, ROUND( AVG("b"."uo_rate"), 2 ) AS "uo_mean"
 		FROM ( SELECT
-			"uo"."ICUSTAY_ID" ,"CHARTTIME","max_vol","TIME_SPAN","icud"."WEIGHT_FIRST"
-			, ROUND( "uo"."max_vol" / "uo"."TIME_SPAN" / "icud"."WEIGHT_FIRST", 3 ) as "uo_rate"
+			"uo"."ICUSTAY_ID" ,"CHARTTIME","max_vol", "MAX_CHARTTIME", "TIME_SPAN","icud"."WEIGHT_FIRST"
+			, cast("uo"."max_vol" / "uo"."TIME_SPAN" / "icud"."WEIGHT_FIRST" as double) as "uo_rate"
 			FROM ( SELECT 
 					"ICUSTAY_ID",
 					"CHARTTIME", 
 					"max_vol",
 					( CASE
 						WHEN ( "ICUSTAY_ID" = LAG( "ICUSTAY_ID" ) OVER( ORDER BY "ICUSTAY_ID" ) ) 
-						THEN EXTRACT( DAY FROM "CHARTTIME" ) - EXTRACT( DAY FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" ) ) )*24
-							+ EXTRACT( HOUR FROM "CHARTTIME" ) - EXTRACT( HOUR FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" ) ) )
-							+ EXTRACT( MINUTE FROM "CHARTTIME" ) - EXTRACT( MINUTE FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" ) ) )/60
+						THEN EXTRACT( DAY FROM "CHARTTIME" ) - EXTRACT( DAY FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID", "CHARTTIME" ) ) )*24
+							+ EXTRACT( HOUR FROM "CHARTTIME" ) - EXTRACT( HOUR FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" , "CHARTTIME") ) )
+							+ EXTRACT( MINUTE FROM "CHARTTIME" ) - EXTRACT( MINUTE FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" , "CHARTTIME") ) )/60
 						ELSE NULL
-					END) AS "TIME_SPAN"
+					END) AS "TIME_SPAN",
+					first_value("CHARTTIME") over (partition by "ICUSTAY_ID" order by "CHARTTIME" desc) as "MAX_CHARTTIME"
 					FROM (	SELECT
 						"io"."ICUSTAY_ID",
 						"io"."CHARTTIME" 
@@ -38,25 +39,27 @@ SELECT DISTINCT
 							428, 473, 2042, 2068, 2111, 2119, 2130, 1922, 2810, 2859,
 							3053, 3462, 3519, 3175, 2366, 2463, 2507, 2510, 2592,
 							2676, 3966, 3987, 4132, 4253, 5927 )
+						And "VOLUME" is not null
 					GROUP BY "io"."ICUSTAY_ID" , "CHARTTIME"
 				)
 			) "uo" 
 			LEFT JOIN "MIMIC2V26"."icustay_detail" "icud" ON "uo"."ICUSTAY_ID" = "icud"."ICUSTAY_ID"
-			WHERE "uo"."TIME_SPAN" IS NOT NULL
+			WHERE "uo"."TIME_SPAN" IS NOT NULL and "uo"."TIME_SPAN">0
 		) "a"
 		JOIN ( SELECT "uo"."ICUSTAY_ID" ,"CHARTTIME","max_vol","TIME_SPAN","icud"."WEIGHT_FIRST"
-				, ROUND( "uo"."max_vol" / "uo"."TIME_SPAN" / "icud"."WEIGHT_FIRST", 3 ) as "uo_rate"
+				,  cast("uo"."max_vol" / "uo"."TIME_SPAN" / "icud"."WEIGHT_FIRST" as double) as "uo_rate"
 				FROM ( SELECT 
 					"ICUSTAY_ID",
 					"CHARTTIME", 
 					"max_vol",
 					( CASE
 						WHEN ( "ICUSTAY_ID" = LAG( "ICUSTAY_ID" ) OVER( ORDER BY "ICUSTAY_ID" ) ) 
-						THEN EXTRACT( DAY FROM "CHARTTIME" ) - EXTRACT( DAY FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" ) ) )*24
-						+ EXTRACT( HOUR FROM "CHARTTIME" ) - EXTRACT( HOUR FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" ) ) )
-						+ EXTRACT( MINUTE FROM "CHARTTIME" ) - EXTRACT( MINUTE FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID" ) ) )/60
+						THEN EXTRACT( DAY FROM "CHARTTIME" ) - EXTRACT( DAY FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID", "CHARTTIME" ) ) )*24
+						+ EXTRACT( HOUR FROM "CHARTTIME" ) - EXTRACT( HOUR FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID", "CHARTTIME" ) ) )
+						+ EXTRACT( MINUTE FROM "CHARTTIME" ) - EXTRACT( MINUTE FROM ( LAG( "CHARTTIME" ) OVER( ORDER BY "ICUSTAY_ID", "CHARTTIME" ) ) )/60
 						ELSE NULL
-					END) AS "TIME_SPAN"
+					END) AS "TIME_SPAN",
+					first_value("CHARTTIME") over (partition by "ICUSTAY_ID" order by "CHARTTIME" desc) as "MAX_CHARTTIME"
 					FROM (	SELECT
 							"io"."ICUSTAY_ID",
 							"io"."CHARTTIME" 
@@ -72,15 +75,16 @@ SELECT DISTINCT
 								428, 473, 2042, 2068, 2111, 2119, 2130, 1922, 2810, 2859,
 								3053, 3462, 3519, 3175, 2366, 2463, 2507, 2510, 2592,
 								2676, 3966, 3987, 4132, 4253, 5927 )
+							And "VOLUME" is not null
 						GROUP BY "io"."ICUSTAY_ID" , "CHARTTIME"
 					)
 				) "uo" 
 				LEFT JOIN "MIMIC2V26"."icustay_detail" "icud" ON "uo"."ICUSTAY_ID" = "icud"."ICUSTAY_ID"
 				WHERE "uo"."TIME_SPAN" IS NOT NULL
-					AND "uo"."TIME_SPAN" != 0
-			) "b" ON "a"."ICUSTAY_ID" = "b"."ICUSTAY_ID"
+					AND "uo"."TIME_SPAN" > 0
+			) "b" ON "a"."ICUSTAY_ID" = "b"."ICUSTAY_ID" AND "a"."CHARTTIME"<=ADD_SECONDS("a"."MAX_CHARTTIME", -60*60*6)
 			WHERE 
 				"b"."CHARTTIME" BETWEEN "a"."CHARTTIME" AND ADD_SECONDS("a"."CHARTTIME", 60*60*6)
 			GROUP BY "a"."ICUSTAY_ID", "a"."CHARTTIME"
-			ORDER BY 1,2
+			--ORDER BY 1,2
 	);

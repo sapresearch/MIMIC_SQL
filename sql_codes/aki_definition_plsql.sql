@@ -44,6 +44,7 @@ and io.itemid in(651, 715, 55, 56, 57, 61, 65, 69, 85, 94, 96, 288, 405,
                        428, 473, 2042, 2068, 2111, 2119, 2130, 1922, 2810, 2859,
                        3053, 3462, 3519, 3175, 2366, 2463, 2507, 2510, 2592,
                        2676, 3966, 3987, 4132, 4253, 5927 )
+and volume is not null
 group by io.icustay_id , charttime
 )
 
@@ -59,28 +60,33 @@ charttime,
     max_vol,
    (case
 when (icustay_id=lag(icustay_id) over(order by icustay_id))
-then extract(day from (charttime-(lag(charttime) over(order by icustay_id))))*24
-        + extract(hour from (charttime-(lag(charttime) over(order by icustay_id))))
-        +extract(minute from (charttime-(lag(charttime) over(order by icustay_id))))/60
+then extract(day from (charttime-(lag(charttime) over(order by icustay_id, charttime))))*24
+        + extract(hour from (charttime-(lag(charttime) over(order by icustay_id, charttime))))
+        +extract(minute from (charttime-(lag(charttime) over(order by icustay_id, charttime))))/60
 else null
 end) as time_span
+, first_value(charttime) over (partition by icustay_id order by charttime desc) as max_charttime
 from uo_table
+order by 1.2
 )
 --select * from uo_time_span;
 
 -------------------- calculate the normalized uo rate -------------------------
 ,normalized_uo as
 (
-select uo.icustay_id ,charttime,max_vol,time_span,icud.weight_first
-  ,cast(round(cast(uo.max_vol/uo.time_span/icud.weight_first as numeric),3) as double precision) as uo_rate
+select uo.icustay_id ,charttime,max_vol, max_charttime, time_span,icud.weight_first
+  ,round(cast(uo.max_vol/uo.time_span/icud.weight_first as double precision),3) as uo_rate
 from uo_time_span uo
   left join mimic2v26.icustay_detail icud on uo.icustay_id=icud.icustay_id
 --left join population c on a.icustay_id=c.icustay_id
 where uo.time_span is not null
+and uo.time_span>0
+--order by uo_rate desc
 )
 
+--select * from normalized_uo;
 
-, aki_onset_1 as
+, aki_onset_6hr as
 (select
 a.icustay_id
 ,a.charttime as onset_time
@@ -90,16 +96,16 @@ a.icustay_id
 , round(avg(b.uo_rate),2) as uo_mean
 from normalized_uo a --what to do here.
 join normalized_uo b on a.icustay_id=b.icustay_id
+and a.charttime <= a.max_charttime-6/24
 where
 --a.uo_rate<0.5
---and
-b.charttime between a.charttime and a.charttime + interval '6 hours'  --do i have to change this?
+ b.charttime between a.charttime and a.charttime + 6/24  --do i have to change this?
 --and b.charttime>a.charttime
 group by a.icustay_id, a.charttime
-order by 1,2
+order by 3 desc
 )
 
---select * from aki_onset_1; --606sec
+select * from aki_onset_6hr; --606sec
 
 
 
