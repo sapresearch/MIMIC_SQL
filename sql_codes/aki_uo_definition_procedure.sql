@@ -6,7 +6,7 @@ CREATE TYPE aki_uo_def_t AS TABLE (
 );
 
 DROP PROCEDURE aki_uo_def_proc;
-CREATE PROCEDURE aki_uo_def_proc (IN q_threshold DOUBLE, OUT v_ret aki_uo_def_t)
+CREATE PROCEDURE aki_uo_def_proc (IN q_threshold DOUBLE, q_time_window INTEGER, OUT v_ret aki_uo_def_t)
 	LANGUAGE SQLSCRIPT READS SQL DATA WITH RESULT VIEW aki_uo_def AS
 
 BEGIN
@@ -93,12 +93,12 @@ SELECT DISTINCT
 				LEFT JOIN "MIMIC2V26"."icustay_detail" "icud" ON "uo"."ICUSTAY_ID" = "icud"."ICUSTAY_ID"
 				WHERE "uo"."TIME_SPAN" IS NOT NULL
 					AND "uo"."TIME_SPAN" > 0
-			) "b" ON "a"."ICUSTAY_ID" = "b"."ICUSTAY_ID" AND "a"."CHARTTIME"<=ADD_SECONDS("a"."MAX_CHARTTIME", -60*60*6)
+			) "b" ON "a"."ICUSTAY_ID" = "b"."ICUSTAY_ID" AND "a"."CHARTTIME"<=ADD_SECONDS("a"."MAX_CHARTTIME", -60*60*:q_time_window)
 			WHERE 
-				"b"."CHARTTIME" BETWEEN "a"."CHARTTIME" AND ADD_SECONDS("a"."CHARTTIME", 60*60*6)
+				"b"."CHARTTIME" BETWEEN "a"."CHARTTIME" AND ADD_SECONDS("a"."CHARTTIME", 60*60*q_time_window)
 			GROUP BY "a"."ICUSTAY_ID", "a"."CHARTTIME"
 			--ORDER BY 3 desc
 	);
 END;
 
-select * from aki_uo_def WITH PARAMETERS('placeholder' = ('$$q_threshold$$', '0.5'));
+select * from aki_uo_def WITH PARAMETERS('placeholder' = ('$$q_threshold$$', '0.5'), 'placeholder' = ('$$q_time_window$$', '6'));
