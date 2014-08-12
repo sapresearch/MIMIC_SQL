@@ -22,3 +22,5 @@ BEGIN
 		)';
 	EXEC query_string;
 END;
+
+CALL "MIMIC2V26"."VIEW_RETURN_CHART_IDS"('po');
