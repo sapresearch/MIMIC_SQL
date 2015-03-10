@@ -908,6 +908,12 @@ order by 1
 --, pco2.pco2_lowest
 --, pco2.pco2_highest
 , pco2.pco2_abnormal_flg
+, lactate.lactate_first
+, coalesce(pco2.pco2_first, 0) as pco2_first_coded
+, lactate.lactate_abnormal_flg
+, ph.ph_first
+, coalesce(ph.ph_first, 0) as ph_first_coded
+, ph.ph_abnormal_flg
 
 from population pop
 left join vent_group vent on pop.icustay_id = vent.icustay_id
@@ -929,6 +935,8 @@ left join lab_bun bun on bun.icustay_id=pop.icustay_id
 left join lab_creatinine creatinine on creatinine.icustay_id=pop.icustay_id
 left join lab_po2 po2 on po2.icustay_id=pop.icustay_id
 left join lab_pco2 pco2 on pco2.icustay_id=pop.icustay_id
+left join lab_ph ph on ph.icustay_id=pop.icustay_id
+left join lab_lactate lactate on lactate.icustay_id=pop.icustay_id
 )
 
 select * from final_table;
