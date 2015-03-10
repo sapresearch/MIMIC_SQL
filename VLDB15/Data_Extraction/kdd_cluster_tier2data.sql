@@ -909,7 +909,7 @@ order by 1
 --, pco2.pco2_highest
 , pco2.pco2_abnormal_flg
 , lactate.lactate_first
-, coalesce(pco2.pco2_first, 0) as pco2_first_coded
+, coalesce(lactate.lactate_first, 0) as lactate_first_coded
 , lactate.lactate_abnormal_flg
 , ph.ph_first
 , coalesce(ph.ph_first, 0) as ph_first_coded
