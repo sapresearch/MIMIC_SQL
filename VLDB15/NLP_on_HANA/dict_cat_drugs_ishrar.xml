@@ -1,0 +1,3569 @@
+<?xml version="1.0" encoding="windows-1252"?>
+	<dictionary xmlns="http://www.sap.com/ta/4.0">
+		<entity_category name="MEDICATION@Diuretics">
+
+			<entity_name standard_form="Bumetanide">
+				<variant name="bumetanide"/>
+				<variant name="BUMETANIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Bumex">
+				<variant name="bumex"/>
+				<variant name="BUMEX"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Ethacrynate Sodium">
+				<variant name="ethacrynate sodium"/>
+				<variant name="ETHACRYNATE SODIUM"/>
+				<variant name="Ethacrynate Na"/>
+				<variant name="ethacrynate na"/>
+				<variant name="ETHACRYNATE NA"/>
+				<variant name="ethacrynate"/>
+				<variant name="ETHACRYNATE"/>
+				<variant name="Ethacrynate"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Edecrin Sodium">
+				<variant name="edecrin sodium"/>
+				<variant name="EDECRIN SODIUM"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Ethacrynic Acid">
+				<variant name="ethacrynic acid"/>
+				<variant name="ETHACRYNIC ACID"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Edecrin">
+				<variant name="edecrin"/>
+				<variant name="EDECRIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Etacrynic Acid">
+				<variant name="etacrynic acid"/>
+				<variant name="ETACRYNIC ACID"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Frusemide">
+				<variant name="frusemide"/>
+				<variant name="FRUSEMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lasix">
+				<variant name="lasix"/>
+				<variant name="LASIX"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Furocot">
+				<variant name="furocot"/>
+				<variant name="FUROCOT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Furomide M.D.">
+				<variant name="furomide m.d."/>
+				<variant name="FUROMIDE M.D."/>
+				<variant name="furomide md"/>
+				<variant name="Furomide MD"/>
+				<variant name="FUROMIDE MD"/>
+				<variant name="furomide"/>
+				<variant name="Furomide"/>
+				<variant name="FUROMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Furosemide">
+				<variant name="furosemide"/>
+				<variant name="FUROSEMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Torasemide">
+				<variant name="torasemide"/>
+				<variant name="TORASEMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Demadex">
+				<variant name="demadex"/>
+				<variant name="DEMADEX"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Torsemide">
+				<variant name="torsemide"/>
+				<variant name="TORSEMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+
+
+			<entity_name standard_form="Carbamide">
+				<variant name="carbamide"/>
+				<variant name="CARBAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Carmol">
+				<variant name="carmol"/>
+				<variant name="CARMOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Aquaphilic W/Carbamide">
+				<variant name="aquaphilic w/carbamide"/>
+				<variant name="AQUAPHILIC W/CARBAMIDE"/>
+				<variant name="aquaphilic with carbamide"/>
+				<variant name="AQUAPHILIC WITH CARBAMIDE"/>
+				<variant name="Aquaphilic With Carbamide"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Aqua Care">
+				<variant name="aqua care"/>
+				<variant name="AQUA CARE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Keralac">
+				<variant name="keralac"/>
+				<variant name="KERALAC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Vanamide">
+				<variant name="vanamide"/>
+				<variant name="VANAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Epimide 50">
+				<variant name="epimide 50"/>
+				<variant name="EPIMIDE 50"/>
+				<variant name="epimide-50"/>
+				<variant name="EPIMIDE-50"/>
+				<variant name="Epimide-50"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Keratol 40">
+				<variant name="keratol 40"/>
+				<variant name="KERATOL 40"/>
+				<variant name="keratol-40"/>
+				<variant name="KERATOL-40"/>
+				<variant name="Keratol-40"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Gordon's Urea">
+				<variant name="gordon's urea"/>
+				<variant name="GORDON'S UREA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Urea">
+				<variant name="urea"/>
+				<variant name="UREA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cordycepic Acid">
+				<variant name="cordycepic acid"/>
+				<variant name="CORDYCEPIC ACID"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Osmitrol">
+				<variant name="osmitrol"/>
+				<variant name="OSMITROL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Resectisol">
+				<variant name="resectisol"/>
+				<variant name="RESECTISOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Aridol">
+				<variant name="aridol"/>
+				<variant name="ARIDOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Manna Sugar">
+				<variant name="manna sugar"/>
+				<variant name="MANNA SUGAR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Mannite">
+				<variant name="mannite"/>
+				<variant name="MANNITE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Mannitol">
+				<variant name="mannitol"/>
+				<variant name="MANNITOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+
+
+
+			<entity_name standard_form="Amiloride Hcl">
+				<variant name="amiloride hcl"/>
+				<variant name="AMILORIDE HCL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Midamor">
+				<variant name="midamor"/>
+				<variant name="MIDAMOR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Amiloride Hydrochloride">
+				<variant name="amiloride hydrochloride"/>
+				<variant name="AMILORIDE HYDROCHLORIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chlorosulthiadil">
+				<variant name="chlorosulthiadil"/>
+				<variant name="CHLOROSULTHIADIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Moduretic 5-50">
+				<variant name="moduretic 5-50"/>
+				<variant name="MODURETIC 5-50"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Hctz">
+				<variant name="hctz"/>
+				<variant name="HCTZ"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Hydrochlorothiazide">
+				<variant name="hydrochlorothiazide"/>
+				<variant name="HYDROCHLOROTHIAZIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Eplerenone">
+				<variant name="eplerenone"/>
+				<variant name="EPLERENONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Inspra">
+				<variant name="inspra"/>
+				<variant name="INSPRA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Epoxymexrenone">
+				<variant name="epoxymexrenone"/>
+				<variant name="EPOXYMEXRENONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Spironolactone">
+				<variant name="spironolactone"/>
+				<variant name="SPIRONOLACTONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Aldactone">
+				<variant name="aldactone"/>
+				<variant name="ALDACTONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Triamterene">
+				<variant name="triamterene"/>
+				<variant name="TRIAMTERENE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dyrenium">
+				<variant name="dyrenium"/>
+				<variant name="DYRENIUM"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chlorosulthiadil/ Spironolactone">
+				<variant name="chlorosulthiadil/ spironolactone"/>
+				<variant name="CHLOROSULTHIADIL/ SPIRONOLACTONE"/>
+				<variant name="chlorosulthiadil"/>
+				<variant name="CHLOROSULTHIADIL"/>
+				<variant name="Chlorosulthiadil"/>
+				<variant name="spironolactone"/>
+				<variant name="SPIRONOLACTONE"/>
+				<variant name="Spironolactone"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Aldactazide">
+				<variant name="aldactazide"/>
+				<variant name="ALDACTAZIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chlorosulthiadil/ Triamterene">
+				<variant name="chlorosulthiadil/ triamterene"/>
+				<variant name="CHLOROSULTHIADIL/ TRIAMTERENE"/>
+				<variant name="triamterene"/>
+				<variant name="TRIAMTERENE"/>
+				<variant name="Triamterene"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dyazide">
+				<variant name="dyazide"/>
+				<variant name="DYAZIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Maxzide">
+				<variant name="maxzide"/>
+				<variant name="MAXZIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+
+
+			
+
+			<entity_name standard_form="Acetazolamide">
+				<variant name="acetazolamide"/>
+				<variant name="ACETAZOLAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chlorthalidone">
+				<variant name="chlorthalidone"/>
+				<variant name="CHLORTHALIDONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chlortalidone">
+				<variant name="chlortalidone"/>
+				<variant name="CHLORTALIDONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+		</entity_category>
+		
+
+		
+		<entity_category name="MEDICATION@DiabeticMedication">
+
+			<entity_name standard_form="Insulin Aspart">
+				<variant name="insulin aspart"/>
+				<variant name="INSULIN ASPART"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Novolog">
+				<variant name="novolog"/>
+				<variant name="NOVOLOG"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Novolog Flexpen">
+				<variant name="novolog flexpen"/>
+				<variant name="NOVOLOG FLEXPEN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Novolog Mix 70/30">
+				<variant name="novolog mix 70/30"/>
+				<variant name="NOVOLOG MIX 70/30"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Degludec">
+				<variant name="insulin degludec"/>
+				<variant name="INSULIN DEGLUDEC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Glulisine">
+				<variant name="insulin glulisine"/>
+				<variant name="INSULIN GLULISINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Apidra">
+				<variant name="apidra"/>
+				<variant name="APIDRA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Lispro">
+				<variant name="insulin lispro"/>
+				<variant name="INSULIN LISPRO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humalog">
+				<variant name="humalog"/>
+				<variant name="HUMALOG"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humalog Mix 50/50">
+				<variant name="humalog mix 50/50"/>
+				<variant name="HUMALOG MIX 50/50"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humalog Mix 75/25">
+				<variant name="humalog mix 75/25"/>
+				<variant name="HUMALOG MIX 75/25"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lispro-Pfc">
+				<variant name="lispro-pfc"/>
+				<variant name="LISPRO-PFC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Human Isophane (Nph)">
+				<variant name="insulin human isophane (nph)"/>
+				<variant name="INSULIN HUMAN ISOPHANE (NPH)"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humulin 50/50">
+				<variant name="humulin 50/50"/>
+				<variant name="HUMULIN 50/50"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humulin 70/30">
+				<variant name="humulin 70/30"/>
+				<variant name="HUMULIN 70/30"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humulin N">
+				<variant name="humulin n"/>
+				<variant name="HUMULIN N"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Novolin 70/30">
+				<variant name="novolin 70/30"/>
+				<variant name="NOVOLIN 70/30"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Novolin N">
+				<variant name="novolin n"/>
+				<variant name="NOVOLIN N"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Human Regular">
+				<variant name="insulin human regular"/>
+				<variant name="INSULIN HUMAN REGULAR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humulin 50/50">
+				<variant name="humulin 50/50"/>
+				<variant name="HUMULIN 50/50"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humulin 70/30">
+				<variant name="humulin 70/30"/>
+				<variant name="HUMULIN 70/30"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humulin R">
+				<variant name="humulin r"/>
+				<variant name="HUMULIN R"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Humulin R U-100">
+				<variant name="humulin r u-100"/>
+				<variant name="HUMULIN R U-100"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Novolin 70/30">
+				<variant name="novolin 70/30"/>
+				<variant name="NOVOLIN 70/30"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Novolin R">
+				<variant name="novolin r"/>
+				<variant name="NOVOLIN R"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Detemir">
+				<variant name="insulin detemir"/>
+				<variant name="INSULIN DETEMIR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Levemir">
+				<variant name="levemir"/>
+				<variant name="LEVEMIR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Levemir Flexpen">
+				<variant name="levemir flexpen"/>
+				<variant name="LEVEMIR FLEXPEN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Levemir Flextouch">
+				<variant name="levemir flextouch"/>
+				<variant name="LEVEMIR FLEXTOUCH"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Glargine">
+				<variant name="insulin glargine"/>
+				<variant name="INSULIN GLARGINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lantus">
+				<variant name="lantus"/>
+				<variant name="LANTUS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lantus Solostar">
+				<variant name="lantus solostar"/>
+				<variant name="LANTUS SOLOSTAR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chlorpropamide">
+				<variant name="chlorpropamide"/>
+				<variant name="CHLORPROPAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Diabinese">
+				<variant name="diabinese"/>
+				<variant name="DIABINESE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tolazamide">
+				<variant name="tolazamide"/>
+				<variant name="TOLAZAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tolinase">
+				<variant name="tolinase"/>
+				<variant name="TOLINASE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tolbutamide">
+				<variant name="tolbutamide"/>
+				<variant name="TOLBUTAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tol-Tab">
+				<variant name="tol-tab"/>
+				<variant name="TOL-TAB"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glybenclamide">
+				<variant name="glybenclamide"/>
+				<variant name="GLYBENCLAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Diabeta">
+				<variant name="diabeta"/>
+				<variant name="DIABETA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Micronase">
+				<variant name="micronase"/>
+				<variant name="MICRONASE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glimepiride">
+				<variant name="glimepiride"/>
+				<variant name="GLIMEPIRIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Amaryl">
+				<variant name="amaryl"/>
+				<variant name="AMARYL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Avandaryl">
+				<variant name="avandaryl"/>
+				<variant name="AVANDARYL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Duetact">
+				<variant name="duetact"/>
+				<variant name="DUETACT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glipizide">
+				<variant name="glipizide"/>
+				<variant name="GLIPIZIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucotrol">
+				<variant name="glucotrol"/>
+				<variant name="GLUCOTROL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucotrol XL">
+				<variant name="glucotrol xl"/>
+				<variant name="GLUCOTROL XL"/>
+				<variant name="Glucotrol xl"/>
+				<variant name="glucotrol XL"/>
+				<variant name="glucotrol-xl"/>
+				<variant name="GLUCOTROL-XL"/>
+				<variant name="Glucotrol-XL"/>
+				<variant name="Glucotrol-xl"/>
+				<variant name="glucotrol-XL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Metaglip">
+				<variant name="metaglip"/>
+				<variant name="METAGLIP"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glybenzcyclamide">
+				<variant name="glybenzcyclamide"/>
+				<variant name="GLYBENZCYCLAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Diabeta">
+				<variant name="diabeta"/>
+				<variant name="DIABETA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Micronase">
+				<variant name="micronase"/>
+				<variant name="MICRONASE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glyburide">
+				<variant name="glyburide"/>
+				<variant name="GLYBURIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucovance">
+				<variant name="glucovance"/>
+				<variant name="GLUCOVANCE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Diabeta">
+				<variant name="diabeta"/>
+				<variant name="DIABETA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Micronase">
+				<variant name="micronase"/>
+				<variant name="MICRONASE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glydiazinamide">
+				<variant name="glydiazinamide"/>
+				<variant name="GLYDIAZINAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucotrol">
+				<variant name="glucotrol"/>
+				<variant name="GLUCOTROL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucotrol XL">
+				<variant name="glucotrol xl"/>
+				<variant name="GLUCOTROL XL"/>
+				<variant name="Glucotrol xl"/>
+				<variant name="glucotrol XL"/>
+				<variant name="glucotrol-xl"/>
+				<variant name="GLUCOTROL-XL"/>
+				<variant name="Glucotrol-XL"/>
+				<variant name="Glucotrol-xl"/>
+				<variant name="glucotrol-XL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Alogliptin">
+				<variant name="alogliptin"/>
+				<variant name="ALOGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Kazano">
+				<variant name="kazano"/>
+				<variant name="KAZANO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nesina">
+				<variant name="nesina"/>
+				<variant name="NESINA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Oseni">
+				<variant name="oseni"/>
+				<variant name="OSENI"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Atovaquone">
+				<variant name="atovaquone"/>
+				<variant name="ATOVAQUONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Malarone">
+				<variant name="malarone"/>
+				<variant name="MALARONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Malarone Pediatric">
+				<variant name="malarone pediatric"/>
+				<variant name="MALARONE PEDIATRIC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Mepron">
+				<variant name="mepron"/>
+				<variant name="MEPRON"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Canagliflozin">
+				<variant name="canagliflozin"/>
+				<variant name="CANAGLIFLOZIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Invokana">
+				<variant name="invokana"/>
+				<variant name="INVOKANA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chloroguanide">
+				<variant name="chloroguanide"/>
+				<variant name="CHLOROGUANIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Malarone">
+				<variant name="malarone"/>
+				<variant name="MALARONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Malarone Pediatric">
+				<variant name="malarone pediatric"/>
+				<variant name="MALARONE PEDIATRIC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dapagliflozin">
+				<variant name="dapagliflozin"/>
+				<variant name="DAPAGLIFLOZIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Farxiga">
+				<variant name="farxiga"/>
+				<variant name="FARXIGA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Proguanil">
+				<variant name="proguanil"/>
+				<variant name="PROGUANIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Malarone">
+				<variant name="malarone"/>
+				<variant name="MALARONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Malarone Pediatric">
+				<variant name="malarone pediatric"/>
+				<variant name="MALARONE PEDIATRIC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Metformin">
+				<variant name="metformin"/>
+				<variant name="METFORMIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Metaglip">
+				<variant name="metaglip"/>
+				<variant name="METAGLIP"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Actoplus Met">
+				<variant name="actoplus met"/>
+				<variant name="ACTOPLUS MET"/>
+				<variant name="actoplus"/>
+				<variant name="ACTOPLUS"/>
+				<variant name="Actoplus"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Actoplus Met XR">
+				<variant name="actoplus met xr"/>
+				<variant name="ACTOPLUS MET XR"/>
+				<variant name="actoplus met XR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Avandamet">
+				<variant name="avandamet"/>
+				<variant name="AVANDAMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Fortamet">
+				<variant name="fortamet"/>
+				<variant name="FORTAMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucophage">
+				<variant name="glucophage"/>
+				<variant name="GLUCOPHAGE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucophage XR">
+				<variant name="glucophage xr"/>
+				<variant name="GLUCOPHAGE XR"/>
+				<variant name="Glucophage xr"/>
+				<variant name="glucophage XR"/>
+				<variant name="glucophage-xr"/>
+				<variant name="GLUCOPHAGE-XR"/>
+				<variant name="Glucophage-XR"/>
+				<variant name="Glucophage-xr"/>
+				<variant name="glucophage-XR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glucovance">
+				<variant name="glucovance"/>
+				<variant name="GLUCOVANCE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glumetza">
+				<variant name="glumetza"/>
+				<variant name="GLUMETZA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Janumet">
+				<variant name="janumet"/>
+				<variant name="JANUMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Janumet XR">
+				<variant name="janumet xr"/>
+				<variant name="JANUMET XR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Jentadueto">
+				<variant name="jentadueto"/>
+				<variant name="JENTADUETO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Kazano">
+				<variant name="kazano"/>
+				<variant name="KAZANO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Komobiglyze">
+				<variant name="komobiglyze"/>
+				<variant name="KOMOBIGLYZE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Prandimet">
+				<variant name="prandimet"/>
+				<variant name="PRANDIMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Riomet">
+				<variant name="riomet"/>
+				<variant name="RIOMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Acarbose">
+				<variant name="acarbose"/>
+				<variant name="ACARBOSE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Precose">
+				<variant name="precose"/>
+				<variant name="PRECOSE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Miglitol">
+				<variant name="miglitol"/>
+				<variant name="MIGLITOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glyset">
+				<variant name="glyset"/>
+				<variant name="GLYSET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nateglinide">
+				<variant name="nateglinide"/>
+				<variant name="NATEGLINIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Starlix">
+				<variant name="starlix"/>
+				<variant name="STARLIX"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Repaglinide">
+				<variant name="repaglinide"/>
+				<variant name="REPAGLINIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Prandimet">
+				<variant name="prandimet"/>
+				<variant name="PRANDIMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Prandin">
+				<variant name="prandin"/>
+				<variant name="PRANDIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Alogliptin">
+				<variant name="alogliptin"/>
+				<variant name="ALOGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Kazano">
+				<variant name="kazano"/>
+				<variant name="KAZANO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nesina">
+				<variant name="nesina"/>
+				<variant name="NESINA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Oseni">
+				<variant name="oseni"/>
+				<variant name="OSENI"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Pioglitazone">
+				<variant name="pioglitazone"/>
+				<variant name="PIOGLITAZONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Actos">
+				<variant name="actos"/>
+				<variant name="ACTOS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Oseni">
+				<variant name="oseni"/>
+				<variant name="OSENI"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Rosiglitazone">
+				<variant name="rosiglitazone"/>
+				<variant name="ROSIGLITAZONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Avandamet">
+				<variant name="avandamet"/>
+				<variant name="AVANDAMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Avandaryl">
+				<variant name="avandaryl"/>
+				<variant name="AVANDARYL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Avandia">
+				<variant name="avandia"/>
+				<variant name="AVANDIA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Alogliptin">
+				<variant name="alogliptin"/>
+				<variant name="ALOGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Kazano">
+				<variant name="kazano"/>
+				<variant name="KAZANO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nesina">
+				<variant name="nesina"/>
+				<variant name="NESINA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Oseni">
+				<variant name="oseni"/>
+				<variant name="OSENI"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Linagliptin">
+				<variant name="linagliptin"/>
+				<variant name="LINAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Jentadueto">
+				<variant name="jentadueto"/>
+				<variant name="JENTADUETO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tradjenta">
+				<variant name="tradjenta"/>
+				<variant name="TRADJENTA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Saxagliptin">
+				<variant name="saxagliptin"/>
+				<variant name="SAXAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Kombiglyze XR">
+				<variant name="kombiglyze xr"/>
+				<variant name="KOMBIGLYZE XR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Onglyza">
+				<variant name="onglyza"/>
+				<variant name="ONGLYZA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Sitagliptin">
+				<variant name="sitagliptin"/>
+				<variant name="SITAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Janumet">
+				<variant name="janumet"/>
+				<variant name="JANUMET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Hanumet XR">
+				<variant name="hanumet xr"/>
+				<variant name="HANUMET XR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Januvia">
+				<variant name="januvia"/>
+				<variant name="JANUVIA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Juvisync">
+				<variant name="juvisync"/>
+				<variant name="JUVISYNC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Vildagliptin">
+				<variant name="vildagliptin"/>
+				<variant name="VILDAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+
+
+
+
+			<entity_name standard_form="Insulin Aspart">
+				<variant name="insulin aspart"/>
+				<variant name="INSULIN ASPART"/>
+				<variant name="insulin"/>
+				<variant name="INSULIN"/>
+				<variant name="Insulin"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Human Isophane (Nph)">
+				<variant name="insulin human isophane (nph)"/>
+				<variant name="INSULIN HUMAN ISOPHANE (NPH)"/>
+				<variant name="insulin human isophane"/>
+				<variant name="INSULIN HUMAN ISOPHANE"/>
+				<variant name="Insulin Human Isophane"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Detemir">
+				<variant name="insulin detemir"/>
+				<variant name="INSULIN DETEMIR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Degludec">
+				<variant name="insulin degludec"/>
+				<variant name="INSULIN DEGLUDEC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Human Regular">
+				<variant name="insulin human regular"/>
+				<variant name="INSULIN HUMAN REGULAR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Glargine">
+				<variant name="insulin glargine"/>
+				<variant name="INSULIN GLARGINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Glulisine">
+				<variant name="insulin glulisine"/>
+				<variant name="INSULIN GLULISINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Insulin Lispro">
+				<variant name="insulin lispro"/>
+				<variant name="INSULIN LISPRO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+
+
+			<entity_name standard_form="Insulin">
+				<variant name="insulin"/>
+				<variant name="INSULIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Sulfonylurea">
+				<variant name="sulfonylurea"/>
+				<variant name="SULFONYLUREA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Biguanide">
+				<variant name="biguanide"/>
+				<variant name="BIGUANIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Alpha-Glucosidase">
+				<variant name="alpha-glucosidase"/>
+				<variant name="ALPHA-GLUCOSIDASE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Meglitinides">
+				<variant name="meglitinides"/>
+				<variant name="MEGLITINIDES"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Thiazolidinedione">
+				<variant name="thiazolidinedione"/>
+				<variant name="THIAZOLIDINEDIONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dipeptidyl Peptidase IV">
+				<variant name="dipeptidyl peptidase iv"/>
+				<variant name="DIPEPTIDYL PEPTIDASE IV"/>
+				<variant name="dipeptidyl peptidase IV"/>
+				<variant name="Dipeptidyl Peptidase"/>
+				<variant name="dipeptidyl peptidase"/>
+				<variant name="DIPEPTIDYL PEPTIDASE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+
+
+
+
+			<entity_name standard_form="Chlorpropamide">
+				<variant name="chlorpropamide"/>
+				<variant name="CHLORPROPAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glybenclamide">
+				<variant name="glybenclamide"/>
+				<variant name="GLYBENCLAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tolazamide">
+				<variant name="tolazamide"/>
+				<variant name="TOLAZAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glimepiride">
+				<variant name="glimepiride"/>
+				<variant name="GLIMEPIRIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tolbutamide">
+				<variant name="tolbutamide"/>
+				<variant name="TOLBUTAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glipizide">
+				<variant name="glipizide"/>
+				<variant name="GLIPIZIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glybenzcyclamide">
+				<variant name="glybenzcyclamide"/>
+				<variant name="GLYBENZCYCLAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glyburide">
+				<variant name="glyburide"/>
+				<variant name="GLYBURIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Glydiazinamide">
+				<variant name="glydiazinamide"/>
+				<variant name="GLYDIAZINAMIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Alogliptin">
+				<variant name="alogliptin"/>
+				<variant name="ALOGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Acarbose">
+				<variant name="acarbose"/>
+				<variant name="ACARBOSE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nateglinide">
+				<variant name="nateglinide"/>
+				<variant name="NATEGLINIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Alogliptin">
+				<variant name="alogliptin"/>
+				<variant name="ALOGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Alogliptin">
+				<variant name="alogliptin"/>
+				<variant name="ALOGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Atovaquone">
+				<variant name="atovaquone"/>
+				<variant name="ATOVAQUONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Miglitol">
+				<variant name="miglitol"/>
+				<variant name="MIGLITOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Repaglinide">
+				<variant name="repaglinide"/>
+				<variant name="REPAGLINIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Pioglitazone">
+				<variant name="pioglitazone"/>
+				<variant name="PIOGLITAZONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Linagliptin">
+				<variant name="linagliptin"/>
+				<variant name="LINAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Canagliflozin">
+				<variant name="canagliflozin"/>
+				<variant name="CANAGLIFLOZIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Rosiglitazone">
+				<variant name="rosiglitazone"/>
+				<variant name="ROSIGLITAZONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Saxagliptin">
+				<variant name="saxagliptin"/>
+				<variant name="SAXAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Chloroguanide">
+				<variant name="chloroguanide"/>
+				<variant name="CHLOROGUANIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Sitagliptin">
+				<variant name="sitagliptin"/>
+				<variant name="SITAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dapagliflozin">
+				<variant name="dapagliflozin"/>
+				<variant name="DAPAGLIFLOZIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Vildagliptin">
+				<variant name="vildagliptin"/>
+				<variant name="VILDAGLIPTIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Proguanil">
+				<variant name="proguanil"/>
+				<variant name="PROGUANIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Metformin">
+				<variant name="metformin"/>
+				<variant name="METFORMIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+		</entity_category>
+
+
+
+		<entity_category name="MEDICATION@BetaBlocker">
+
+			<entity_name standard_form="Acebutolol">
+				<variant name="acebutolol"/>
+				<variant name="ACEBUTOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Atenolol">
+				<variant name="atenolol"/>
+				<variant name="ATENOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Betaxolo">
+				<variant name="betaxolo"/>
+				<variant name="BETAXOLO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Bisoprolol">
+				<variant name="bisoprolol"/>
+				<variant name="BISOPROLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Metoprolol">
+				<variant name="metoprolol"/>
+				<variant name="METOPROLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Esmolol">
+				<variant name="esmolol"/>
+				<variant name="ESMOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nadolol">
+				<variant name="nadolol"/>
+				<variant name="NADOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Timolol">
+				<variant name="timolol"/>
+				<variant name="TIMOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Propranolol">
+				<variant name="propranolol"/>
+				<variant name="PROPRANOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Pindolol">
+				<variant name="pindolol"/>
+				<variant name="PINDOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Prinodolol">
+				<variant name="prinodolol"/>
+				<variant name="PRINODOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Sotalol">
+				<variant name="sotalol"/>
+				<variant name="SOTALOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Metipranolol">
+				<variant name="metipranolol"/>
+				<variant name="METIPRANOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Sectral">
+				<variant name="sectral"/>
+				<variant name="SECTRAL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tenormin">
+				<variant name="tenormin"/>
+				<variant name="TENORMIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Betoptic S">
+				<variant name="betoptic s"/>
+				<variant name="BETOPTIC S"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Zebeta">
+				<variant name="zebeta"/>
+				<variant name="ZEBETA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Toprol XL">
+				<variant name="toprol xl"/>
+				<variant name="TOPROL XL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Brevibloc">
+				<variant name="brevibloc"/>
+				<variant name="BREVIBLOC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Corgard">
+				<variant name="corgard"/>
+				<variant name="CORGARD"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Timoptic Ocudose">
+				<variant name="timoptic ocudose"/>
+				<variant name="TIMOPTIC OCUDOSE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Inderal">
+				<variant name="inderal"/>
+				<variant name="INDERAL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Visken">
+				<variant name="visken"/>
+				<variant name="VISKEN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Visken">
+				<variant name="visken"/>
+				<variant name="VISKEN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Betapace">
+				<variant name="betapace"/>
+				<variant name="BETAPACE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Optipranolol">
+				<variant name="optipranolol"/>
+				<variant name="OPTIPRANOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Kerlone">
+				<variant name="kerlone"/>
+				<variant name="KERLONE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Ziac">
+				<variant name="ziac"/>
+				<variant name="ZIAC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lopressor">
+				<variant name="lopressor"/>
+				<variant name="LOPRESSOR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Timoptic Ocumeter">
+				<variant name="timoptic ocumeter"/>
+				<variant name="TIMOPTIC OCUMETER"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Inderal LA">
+				<variant name="inderal la"/>
+				<variant name="INDERAL LA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Betapace AF">
+				<variant name="betapace af"/>
+				<variant name="BETAPACE AF"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Timoptic Ocumeter Plus">
+				<variant name="timoptic ocumeter plus"/>
+				<variant name="TIMOPTIC OCUMETER PLUS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Innopran XL">
+				<variant name="innopran xl"/>
+				<variant name="INNOPRAN XL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Sorine">
+				<variant name="sorine"/>
+				<variant name="SORINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Timoptic-XE Ocumeter">
+				<variant name="timoptic-xe ocumeter"/>
+				<variant name="TIMOPTIC-XE OCUMETER"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Propranolol HCl Intensol">
+				<variant name="propranolol hcl intensol"/>
+				<variant name="PROPRANOLOL HCL INTENSOL"/>
+				<variant name="Propranolol HCL Intensol"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Blocadren">
+				<variant name="blocadren"/>
+				<variant name="BLOCADREN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Inderal XL">
+				<variant name="inderal xl"/>
+				<variant name="INDERAL XL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Istalol">
+				<variant name="istalol"/>
+				<variant name="ISTALOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Hemangeol">
+				<variant name="hemangeol"/>
+				<variant name="HEMANGEOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Timoptic-XE Ocumeter Plus">
+				<variant name="timoptic-xe ocumeter plus"/>
+				<variant name="TIMOPTIC-XE OCUMETER PLUS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Betimol">
+				<variant name="betimol"/>
+				<variant name="BETIMOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nebivolol">
+				<variant name="nebivolol"/>
+				<variant name="NEBIVOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Carvedilol">
+				<variant name="carvedilol"/>
+				<variant name="CARVEDILOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Labetalol">
+				<variant name="labetalol"/>
+				<variant name="LABETALOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Carteolol">
+				<variant name="carteolol"/>
+				<variant name="CARTEOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Penbutolol">
+				<variant name="penbutolol"/>
+				<variant name="PENBUTOLOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Bystolic">
+				<variant name="bystolic"/>
+				<variant name="BYSTOLIC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Coreg">
+				<variant name="coreg"/>
+				<variant name="COREG"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Normodyne">
+				<variant name="normodyne"/>
+				<variant name="NORMODYNE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cartrol">
+				<variant name="cartrol"/>
+				<variant name="CARTROL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Levatol">
+				<variant name="levatol"/>
+				<variant name="LEVATOL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Trandate">
+				<variant name="trandate"/>
+				<variant name="TRANDATE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Ocupress">
+				<variant name="ocupress"/>
+				<variant name="OCUPRESS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tenoretic 100">
+				<variant name="tenoretic 100"/>
+				<variant name="TENORETIC 100"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Ziac">
+				<variant name="ziac"/>
+				<variant name="ZIAC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dutoprol">
+				<variant name="dutoprol"/>
+				<variant name="DUTOPROL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Corzide">
+				<variant name="corzide"/>
+				<variant name="CORZIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Combigan">
+				<variant name="combigan"/>
+				<variant name="COMBIGAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Inderide">
+				<variant name="inderide"/>
+				<variant name="INDERIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tenoretic 50">
+				<variant name="tenoretic 50"/>
+				<variant name="TENORETIC 50"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lopressor HCT">
+				<variant name="lopressor hct"/>
+				<variant name="LOPRESSOR HCT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cosopt">
+				<variant name="cosopt"/>
+				<variant name="COSOPT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cosopt Ocumeter">
+				<variant name="cosopt ocumeter"/>
+				<variant name="COSOPT OCUMETER"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cosopt Ocumeter Plus">
+				<variant name="cosopt ocumeter plus"/>
+				<variant name="COSOPT OCUMETER PLUS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cosopt PF">
+				<variant name="cosopt pf"/>
+				<variant name="COSOPT PF"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+		</entity_category>
+
+
+		<entity_category name="MEDICATION@CalciumChannelBlocker">
+
+
+			<entity_name standard_form="Nifedipine">
+				<variant name="nifedipine"/>
+				<variant name="NIFEDIPINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Felodipine">
+				<variant name="felodipine"/>
+				<variant name="FELODIPINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Isradipine">
+				<variant name="isradipine"/>
+				<variant name="ISRADIPINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nicardipine">
+				<variant name="nicardipine"/>
+				<variant name="NICARDIPINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nisoldipine">
+				<variant name="nisoldipine"/>
+				<variant name="NISOLDIPINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Amlodipine">
+				<variant name="amlodipine"/>
+				<variant name="AMLODIPINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Verapamil">
+				<variant name="verapamil"/>
+				<variant name="VERAPAMIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Diltiazem">
+				<variant name="diltiazem"/>
+				<variant name="DILTIAZEM"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Adalat CC">
+				<variant name="adalat cc"/>
+				<variant name="ADALAT CC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Plendil">
+				<variant name="plendil"/>
+				<variant name="PLENDIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dynacirc">
+				<variant name="dynacirc"/>
+				<variant name="DYNACIRC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cardene">
+				<variant name="cardene"/>
+				<variant name="CARDENE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Sular">
+				<variant name="sular"/>
+				<variant name="SULAR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Norvasc">
+				<variant name="norvasc"/>
+				<variant name="NORVASC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Calan">
+				<variant name="calan"/>
+				<variant name="CALAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cardizem">
+				<variant name="cardizem"/>
+				<variant name="CARDIZEM"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Procardia">
+				<variant name="procardia"/>
+				<variant name="PROCARDIA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dynacirc CR">
+				<variant name="dynacirc cr"/>
+				<variant name="DYNACIRC CR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cardene IV">
+				<variant name="cardene iv"/>
+				<variant name="CARDENE IV"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Calan SR">
+				<variant name="calan sr"/>
+				<variant name="CALAN SR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cardizem CD">
+				<variant name="cardizem cd"/>
+				<variant name="CARDIZEM CD"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Procardia XL">
+				<variant name="procardia xl"/>
+				<variant name="PROCARDIA XL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cardene SR">
+				<variant name="cardene sr"/>
+				<variant name="CARDENE SR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Covera-HS">
+				<variant name="covera-hs"/>
+				<variant name="COVERA-HS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cartia XT">
+				<variant name="cartia xt"/>
+				<variant name="CARTIA XT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Afeditab CR">
+				<variant name="afeditab cr"/>
+				<variant name="AFEDITAB CR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Isoptin SR">
+				<variant name="isoptin sr"/>
+				<variant name="ISOPTIN SR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dilacor XR">
+				<variant name="dilacor xr"/>
+				<variant name="DILACOR XR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nifediac CC">
+				<variant name="nifediac cc"/>
+				<variant name="NIFEDIAC CC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Verelan">
+				<variant name="verelan"/>
+				<variant name="VERELAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tiazac">
+				<variant name="tiazac"/>
+				<variant name="TIAZAC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Nifedical XL">
+				<variant name="nifedical xl"/>
+				<variant name="NIFEDICAL XL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Verelan PM">
+				<variant name="verelan pm"/>
+				<variant name="VERELAN PM"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dilt-CD">
+				<variant name="dilt-cd"/>
+				<variant name="DILT-CD"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Dilt-XR">
+				<variant name="dilt-xr"/>
+				<variant name="DILT-XR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Diltia XT">
+				<variant name="diltia xt"/>
+				<variant name="DILTIA XT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+
+
+			<entity_name standard_form="Amturnide">
+				<variant name="amturnide"/>
+				<variant name="AMTURNIDE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tarka">
+				<variant name="tarka"/>
+				<variant name="TARKA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Azor">
+				<variant name="azor"/>
+				<variant name="AZOR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Caduet">
+				<variant name="caduet"/>
+				<variant name="CADUET"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Exforge">
+				<variant name="exforge"/>
+				<variant name="EXFORGE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Exforge HCT">
+				<variant name="exforge hct"/>
+				<variant name="EXFORGE HCT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lotrel">
+				<variant name="lotrel"/>
+				<variant name="LOTREL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tekamlo">
+				<variant name="tekamlo"/>
+				<variant name="TEKAMLO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Tribenzor">
+				<variant name="tribenzor"/>
+				<variant name="TRIBENZOR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Twynsta">
+				<variant name="twynsta"/>
+				<variant name="TWYNSTA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+			
+
+		</entity_category>
+
+
+
+		<entity_category name="MEDICATION@ACEInhibitor">
+
+
+			<entity_name standard_form="Benazepril">
+				<variant name="benazepril"/>
+				<variant name="BENAZEPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lotensin">
+				<variant name="lotensin"/>
+				<variant name="LOTENSIN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Captopril">
+				<variant name="captopril"/>
+				<variant name="CAPTOPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Capoten">
+				<variant name="capoten"/>
+				<variant name="CAPOTEN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Enalapril">
+				<variant name="enalapril"/>
+				<variant name="ENALAPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Vasotec">
+				<variant name="vasotec"/>
+				<variant name="VASOTEC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Epaned">
+				<variant name="epaned"/>
+				<variant name="EPANED"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Enalaprilat">
+				<variant name="enalaprilat"/>
+				<variant name="ENALAPRILAT"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Vasotec I.V.">
+				<variant name="vasotec i.v."/>
+				<variant name="VASOTEC I.V."/>
+				<variant name="Vasotec IV"/>
+				<variant name="vasotec IV"/>
+				<variant name="VASOTEC IV"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Fosinopril">
+				<variant name="fosinopril"/>
+				<variant name="FOSINOPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Monopril">
+				<variant name="monopril"/>
+				<variant name="MONOPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Lisinopril">
+				<variant name="lisinopril"/>
+				<variant name="LISINOPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Prinivil">
+				<variant name="prinivil"/>
+				<variant name="PRINIVIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Zestril">
+				<variant name="zestril"/>
+				<variant name="ZESTRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Moexipril">
+				<variant name="moexipril"/>
+				<variant name="MOEXIPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Univasc">
+				<variant name="univasc"/>
+				<variant name="UNIVASC"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Perindopril Erbumine">
+				<variant name="perindopril erbumine"/>
+				<variant name="PERINDOPRIL ERBUMINE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Aceon">
+				<variant name="aceon"/>
+				<variant name="ACEON"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Quinapril">
+				<variant name="quinapril"/>
+				<variant name="QUINAPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Accupril">
+				<variant name="accupril"/>
+				<variant name="ACCUPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Ramipril">
+				<variant name="ramipril"/>
+				<variant name="RAMIPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Altace">
+				<variant name="altace"/>
+				<variant name="ALTACE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Trandolapril">
+				<variant name="trandolapril"/>
+				<variant name="TRANDOLAPRIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Mavik">
+				<variant name="mavik"/>
+				<variant name="MAVIK"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+		</entity_category>
+
+
+
+		<entity_category name="MEDICATION@ARB">
+
+			<entity_name standard_form="Aliskiren">
+				<variant name="aliskiren"/>
+				<variant name="ALISKIREN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Valturna">
+				<variant name="valturna"/>
+				<variant name="VALTURNA"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Azilsartan Medoxomil">
+				<variant name="azilsartan medoxomil"/>
+				<variant name="AZILSARTAN MEDOXOMIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Edarbi">
+				<variant name="edarbi"/>
+				<variant name="EDARBI"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Candesartan Cilexetil">
+				<variant name="candesartan cilexetil"/>
+				<variant name="CANDESARTAN CILEXETIL"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Atacand">
+				<variant name="atacand"/>
+				<variant name="ATACAND"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Eprosartan Mesylate">
+				<variant name="eprosartan mesylate"/>
+				<variant name="EPROSARTAN MESYLATE"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Teveten">
+				<variant name="teveten"/>
+				<variant name="TEVETEN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Irbesartan">
+				<variant name="irbesartan"/>
+				<variant name="IRBESARTAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Avapro">
+				<variant name="avapro"/>
+				<variant name="AVAPRO"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Losartan K/Potassium">
+				<variant name="losartan k/potassium"/>
+				<variant name="LOSARTAN K/POTASSIUM"/>
+				<variant name="Losartan K"/>
+				<variant name="losartan k"/>
+				<variant name="losartan potassium"/>
+				<variant name="LOSARTAN POTASSIUM"/>
+				<variant name="Losartan Potassium"/>
+				<variant name="LOSARTAN K"/>
+				<variant name="LOSARTAN-K"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Cozaar">
+				<variant name="cozaar"/>
+				<variant name="COZAAR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Olmesartan">
+				<variant name="olmesartan"/>
+				<variant name="OLMESARTAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Benicar">
+				<variant name="benicar"/>
+				<variant name="BENICAR"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Telmisartan">
+				<variant name="telmisartan"/>
+				<variant name="TELMISARTAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Micardis">
+				<variant name="micardis"/>
+				<variant name="MICARDIS"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Valsartan">
+				<variant name="valsartan"/>
+				<variant name="VALSARTAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+
+			<entity_name standard_form="Diovan">
+				<variant name="diovan"/>
+				<variant name="DIOVAN"/>
+
+				<variant_generation type="standard" language="english" />
+
+			</entity_name>
+
+		</entity_category>
+	</dictionary>
