@@ -70,22 +70,32 @@ AFLMETHODIMP CDTWAFL::DTW(hana::SharedTableViewer inputtable1,hana::SharedTableV
 	Double val_x, val_y;
 	signal_x.toDouble(0,val_x);
 	signal_y.toDouble(0,val_y);
-	matrix[0][0] = FN->calDistance( (double)val_x.native(),   (double)val_y.native() );
+	double double_val_x, double_val_y;
+	double_val_x =(double)val_x.native();
+	double_val_y =(double)val_y.native();
+	matrix[0][0] = FN->calDistance( double_val_x>0 ? double_val_x:0, double_val_y>0 ? double_val_y:0 );
+	
 	for( uint64_t i = 1; i< min(window_size, size); i++){
 		signal_x.toDouble(i,val_x);
 		signal_y.toDouble(0,val_y);
-		matrix[i][0] = matrix[i-1][0] + FN->calDistance( (double)val_x.native(),   (double)val_y.native() ); 
+		double_val_x =(double)val_x.native();
+		double_val_y =(double)val_y.native();
+		matrix[i][0] = matrix[i-1][0] + FN->calDistance( double_val_x>0 ? double_val_x:0, double_val_y>0 ? double_val_y:0 ); 
 		
 		signal_x.toDouble(0,val_x);
 		signal_y.toDouble(i,val_y);
-		matrix[i][0] = matrix[0][i-1] + FN->calDistance( (double)val_x.native(),   (double)val_y.native() ); 
+		double_val_x =(double)val_x.native();
+		double_val_y =(double)val_y.native();
+		matrix[i][0] = matrix[0][i-1] + FN->calDistance( double_val_x>0 ? double_val_x:0, double_val_y>0 ? double_val_y:0 ); 
 	}
 	
 	for( uint64_t i = 1; i< size;i++){
 		for( uint64_t j = max(1, (int)i-(int)window_size); j < min( size, i+window_size+1);j++){
 			signal_x.toDouble(i,val_x);
 			signal_y.toDouble(j,val_y);
-			matrix[i][j] = min( matrix[i-1][j-1], min( matrix[i-1][j], matrix[i][j-1]) ) + FN->calDistance( (double)val_x.native(),   (double)val_y.native() ); 
+			double_val_x =(double)val_x.native();
+			double_val_y =(double)val_y.native();
+			matrix[i][j] = min( matrix[i-1][j-1], min( matrix[i-1][j], matrix[i][j-1]) ) + FN->calDistance( double_val_x>0 ? double_val_x:0, double_val_y>0 ? double_val_y:0 ); 
 		}
 	}
 
