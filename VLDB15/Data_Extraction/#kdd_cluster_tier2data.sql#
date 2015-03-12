@@ -18,7 +18,7 @@
 --------------------------------------------------------------------------------------------------------
 -------------------------- Vent & vasopressor patients  ------------------------------------------------
 --------------------------------------------------------------------------------------------------------
---create table kdd_tier2_mar15 as
+--create table kdd_tier2_feb as
 with population as
 (select kdd.icustay_id
 , icu.hadm_id
@@ -27,7 +27,7 @@ with population as
 , kdd.gender_male as gender_num
 from kdd_tier1_feb kdd
 join mimic2v26.icustay_detail icu on kdd.icustay_id= icu.icustay_id
---where kdd.icustay_id<10
+where kdd.icustay_id<100
 )
 
 --select * from population;
@@ -48,12 +48,12 @@ from population pop
 join mimic2v26.chartevents ch 
   on ch.icustay_id=pop.icustay_id 
   and ch.itemid in (720,722)
-  and ch.charttime <=pop.icustay_intime+12/24
 )
 
 , vent_group as
 (select distinct icustay_id
-, (12- first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc)) as vent_duration_12hr
+--, first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc) as first_vent
+, case when first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc) <=12 then 1 else 0 end as vent_1st_12hr
 from vent_group1
 )
 
@@ -85,16 +85,15 @@ join mimic2v26.medevents med on med.icustay_id=pop.icustay_id
   and med.itemid in (51,43,128,120, 119) --- a more concise list
   and med.dose>0
   --and med.itemid in (46,47,120,43,307,44,119,309,51,127,128)
-  and med.charttime <= pop.icustay_intime+12/24
 where med.charttime is not null
 )
 
---select * from vaso_group1;
 --select distinct itemid, count(*) from vaso_group group by itemid;
 
 , vaso_group as
 (select distinct icustay_id
-, first_value(value1) over (partition by icustay_id order by value1 desc) as vaso_max_dosage_12hr
+--, first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc) as first_vaso
+, case when first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc) <=12 then 1 else 0 end as vaso_1st_12hr
 from vaso_group1
 )
 
@@ -122,7 +121,6 @@ from population pop
 join mimic2v26.medevents med on med.icustay_id=pop.icustay_id 
   --and med.itemid in (124,118,149,150,308,163,131)
   and itemid in (149,163,131,124,118)
-  and med.charttime <= pop.icustay_intime + 12/24
 where med.charttime is not null
 )
 
@@ -131,7 +129,8 @@ where med.charttime is not null
 
 , sedative_group as
 (select distinct icustay_id
-, 12- first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc) as sedative_duration_12hr
+--, first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc) as first_sedative
+, case when first_value(timestamp_hr) over (partition by icustay_id order by timestamp_hr asc) <=12 then 1 else 0 end as sedative_1st_12hr
 from sedative_group1
 )
 
@@ -324,7 +323,7 @@ order by 1
 , lab_wbc as
 (select distinct icustay_id
 , wbc_first
---, case when wbc_first between 4.5 and 10 then 0 else 1 end as wbc_abnormal_flg
+, case when wbc_first between 4.5 and 10 then 0 else 1 end as wbc_abnormal_flg
 from lab_wbc_1
 order by 1
 )
@@ -361,12 +360,15 @@ order by 1
 
 , lab_hgb as
 (select distinct icustay_id
-
+--, first_value(hgb) over (partition by hadm_id order by charttime asc) as hgb_first
+--, first_value(hgb) over (partition by hadm_id order by hgb asc) as hgb_lowest
+--, first_value(hgb) over (partition by hadm_id order by hgb desc) as hgb_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) hgb_abnormal_flg
 , hgb_first
---, case when gender_num=1 and hgb_first between 13.8 and 17.2 then 0 
---       when gender_num=0 and hgb_first between 12.1 and 15.1 then 0 
---       --when pop.gender_num is null then null
---       else 1 end as hgb_abnormal_flg
+, case when gender_num=1 and hgb_first between 13.8 and 17.2 then 0 
+       when gender_num=0 and hgb_first between 12.1 and 15.1 then 0 
+       --when pop.gender_num is null then null
+       else 1 end as hgb_abnormal_flg
 from lab_hgb_1
 order by 1
 )
@@ -400,9 +402,13 @@ order by 1
 
 , lab_platelet as
 (select distinct icustay_id
+--, first_value(platelet) over (partition by hadm_id order by charttime asc) as platelet_first
+--, first_value(platelet) over (partition by hadm_id order by platelet asc) as platelet_lowest
+--, first_value(platelet) over (partition by hadm_id order by platelet desc) as platelet_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) platelet_abnormal_flg
 , platelet_first
---, case when platelet_first between 150 and 400 then 0 
---      else 1 end as platelet_abnormal_flg
+, case when platelet_first between 150 and 400 then 0 
+      else 1 end as platelet_abnormal_flg
 from lab_platelet_1
 order by 1
 )
@@ -437,9 +443,13 @@ order by 1
 
 , lab_sodium as
 (select distinct icustay_id
+--, first_value(sodium) over (partition by hadm_id order by charttime asc) as sodium_first
+--, first_value(sodium) over (partition by hadm_id order by sodium asc) as sodium_lowest
+--, first_value(sodium) over (partition by hadm_id order by sodium desc) as sodium_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) sodium_abnormal_flg
 , sodium_first
---, case when sodium_first between 135 and 145 then 0 
---       else 1 end as sodium_abnormal_flg
+, case when sodium_first between 135 and 145 then 0 
+       else 1 end as sodium_abnormal_flg
 from lab_sodium_1
 order by 1
 )
@@ -474,9 +484,13 @@ order by 1
 
 , lab_potassium as
 (select distinct icustay_id
+--, first_value(potassium) over (partition by hadm_id order by charttime asc) as potassium_first
+--, first_value(potassium) over (partition by hadm_id order by potassium asc) as potassium_lowest
+--, first_value(potassium) over (partition by hadm_id order by potassium desc) as potassium_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) potassium_abnormal_flg
 , potassium_first
---, case when potassium_first between 3.7 and 5.2 then 0 
---       else 1 end as potassium_abnormal_flg
+, case when potassium_first between 3.7 and 5.2 then 0 
+       else 1 end as potassium_abnormal_flg
 from lab_potassium_1
 order by 1
 )
@@ -510,8 +524,12 @@ order by 1
 
 , lab_tco2 as
 (select distinct icustay_id
+--, first_value(tco2) over (partition by hadm_id order by charttime asc) as tco2_first
+--, first_value(tco2) over (partition by hadm_id order by tco2 asc) as tco2_lowest
+--, first_value(tco2) over (partition by hadm_id order by tco2 desc) as tco2_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) tco2_abnormal_flg
 , tco2_first
---, case when tco2_first between 22 and 28 then 0 else 1 end as tco2_abnormal_flg
+, case when tco2_first between 22 and 28 then 0 else 1 end as tco2_abnormal_flg
 from lab_tco2_1
 order by 1
 )
@@ -545,8 +563,12 @@ order by 1
 
 , lab_chloride as
 (select distinct icustay_id
+--, first_value(chloride) over (partition by hadm_id order by charttime asc) as chloride_first
+--, first_value(chloride) over (partition by hadm_id order by chloride asc) as chloride_lowest
+--, first_value(chloride) over (partition by hadm_id order by chloride desc) as chloride_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) chloride_abnormal_flg
 , chloride_first
---, case when chloride_first between 96 and 106 then 0 else 1 end as chloride_abnormal_flg
+, case when chloride_first between 96 and 106 then 0 else 1 end as chloride_abnormal_flg
 from lab_chloride_1
 order by 1
 )
@@ -579,8 +601,13 @@ order by 1
 
 , lab_bun as
 (select distinct icustay_id
+--, first_value(bun) over (partition by hadm_id order by charttime asc) as bun_first
+----, first_value(abnormal_flg) over (partition by hadm_id order by chartime asc) as wbs_first_abn_flg
+--, first_value(bun) over (partition by hadm_id order by bun asc) as bun_lowest
+--, first_value(bun) over (partition by hadm_id order by bun desc) as bun_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) bun_abnormal_flg
 , bun_first
---, case when bun_first between 6 and 20 then 0 else 1 end as bun_abnormal_flg
+, case when bun_first between 6 and 20 then 0 else 1 end as bun_abnormal_flg
 from lab_bun_1
 order by 1
 )
@@ -615,10 +642,15 @@ order by 1
 
 , lab_creatinine as
 (select distinct icustay_id
+--, first_value(creatinine) over (partition by hadm_id order by charttime asc) as creatinine_first
+----, first_value(abnormal_flg) over (partition by hadm_id order by chartime asc) as wbs_first_abn_flg
+--, first_value(creatinine) over (partition by hadm_id order by creatinine asc) as creatinine_lowest
+--, first_value(creatinine) over (partition by hadm_id order by creatinine desc) as creatinine_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) creatinine_abnormal_flg
 , creatinine_first
---, case when gender_num=1 and creatinine_first <= 1.3 then 0 
---       when gender_num=0 and creatinine_first <= 1.1 then 0 
---        else 1 end as creatinine_abnormal_flg
+, case when gender_num=1 and creatinine_first <= 1.3 then 0 
+       when gender_num=0 and creatinine_first <= 1.1 then 0 
+        else 1 end as creatinine_abnormal_flg
 from lab_creatinine_1
 order by 1
 )
@@ -651,8 +683,13 @@ order by 1
 
 , lab_lactate as
 (select distinct icustay_id
+--, first_value(lactate) over (partition by hadm_id order by charttime asc) as lactate_first
+----, first_value(abnormal_flg) over (partition by hadm_id order by chartime asc) as wbs_first_abn_flg
+--, first_value(lactate) over (partition by hadm_id order by lactate asc) as lactate_lowest
+--, first_value(lactate) over (partition by hadm_id order by lactate desc) as lactate_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) lactate_abnormal_flg
 , lactate_first
---, case when lactate_first between 0.5 and 2.2 then 0 else 1 end as lactate_abnormal_flg
+, case when lactate_first between 0.5 and 2.2 then 0 else 1 end as lactate_abnormal_flg
 from lab_lactate_1
 order by 1
 )
@@ -684,8 +721,13 @@ order by 1
 
 , lab_ph as
 (select distinct icustay_id
+--, first_value(ph) over (partition by hadm_id order by charttime asc) as ph_first
+----, first_value(abnormal_flg) over (partition by hadm_id order by chartime asc) as wbs_first_abn_flg
+--, first_value(ph) over (partition by hadm_id order by ph asc) as ph_lowest
+--, first_value(ph) over (partition by hadm_id order by ph desc) as ph_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) ph_abnormal_flg
 , ph_first
---, case when ph_first between 7.38 and 7.42 then 0 else 1 end as ph_abnormal_flg
+, case when ph_first between 7.38 and 7.42 then 0 else 1 end as ph_abnormal_flg
 from lab_ph_1
 order by 1
 )
@@ -717,8 +759,13 @@ order by 1
 
 , lab_po2 as
 (select distinct icustay_id
+--, first_value(po2) over (partition by hadm_id order by charttime asc) as po2_first
+----, first_value(abnormal_flg) over (partition by hadm_id order by chartime asc) as wbs_first_abn_flg
+--, first_value(po2) over (partition by hadm_id order by po2 asc) as po2_lowest
+--, first_value(po2) over (partition by hadm_id order by po2 desc) as po2_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) po2_abnormal_flg
 , po2_first
---, case when po2_first between 75 and 100 then 0 else 1 end as po2_abnormal_flg
+, case when po2_first between 75 and 100 then 0 else 1 end as po2_abnormal_flg
 from lab_po2_1
 order by 1
 )
@@ -750,8 +797,13 @@ order by 1
 
 , lab_pco2 as
 (select distinct icustay_id
+--, first_value(pco2) over (partition by hadm_id order by charttime asc) as pco2_first
+----, first_value(abnormal_flg) over (partition by hadm_id order by chartime asc) as wbs_first_abn_flg
+--, first_value(pco2) over (partition by hadm_id order by pco2 asc) as pco2_lowest
+--, first_value(pco2) over (partition by hadm_id order by pco2 desc) as pco2_highest
+--, first_value(abnormal_flg) over (partition by hadm_id order by abnormal_flg desc) pco2_abnormal_flg
 , pco2_first
---, case when pco2_first between 35 and 45 then 0 else 1 end as pco2_abnormal_flg
+, case when pco2_first between 35 and 45 then 0 else 1 end as pco2_abnormal_flg
 from lab_pco2_1
 order by 1
 )
@@ -761,9 +813,9 @@ order by 1
 
 , final_table as
 (select pop.icustay_id
-, coalesce(vent.vent_duration_12hr, 0) as vent_duration_12hr
-, coalesce(vaso.vaso_max_dosage_12hr, 0) as vaso_max_dosage_12hr
-, coalesce(se.sedative_duration_12hr, 0) as sedative_duration_12hr
+, coalesce(vent.vent_1st_12hr, 0) as vent_1st_12hr
+, coalesce(vaso.vaso_1st_12hr, 0) as vaso_1st_12hr
+, coalesce(se.sedative_1st_12hr, 0) as sedative_1st_12hr
 
 , mi.temp_min
 , ma.temp_max
@@ -802,18 +854,60 @@ order by 1
 
 
 , wbc.wbc_first
+, coalesce(wbc.wbc_first,0) as wbc_first_coded
+--, wbc.wbc_lowest
+--, wbc.wbc_highest
+, wbc.wbc_abnormal_flg
 , hgb.hgb_first
+, coalesce(hgb.hgb_first, 0) as hgb_first_coded
+--, hgb.hgb_lowest
+--, hgb.hgb_highest
+, hgb.hgb_abnormal_flg
 , platelet.platelet_first
+, coalesce(platelet.platelet_first, 0) as platelet_first_coded
+--, platelet.platelet_lowest
+--, platelet.platelet_highest
+, platelet.platelet_abnormal_flg
 , sodium.sodium_first
+, coalesce(sodium.sodium_first, 0) as sodium_first_coded
+--, sodium.sodium_lowest
+--, sodium.sodium_highest
+, sodium.sodium_abnormal_flg
 , potassium.potassium_first
+, coalesce(potassium.potassium_first, 0) as potassium_first_coded
+--, potassium.potassium_lowest
+--, potassium.potassium_highest
+, potassium.potassium_abnormal_flg
 , tco2.tco2_first
+, coalesce(tco2.tco2_first, 0) as tco2_first_coded
+--, tco2.tco2_lowest
+--, tco2.tco2_highest
+, tco2.tco2_abnormal_flg
 , chloride.chloride_first
+, coalesce(chloride.chloride_first, 0) as chloride_first_coded
+--, chloride.chloride_lowest
+--, chloride.chloride_highest
+, chloride.chloride_abnormal_flg
 , bun.bun_first
+, coalesce(bun.bun_first, 0) as bun_first_coded
+--, bun.bun_lowest
+--, bun.bun_highest
+, bun.bun_abnormal_flg
 , creatinine.creatinine_first
-, lactate.lactate_first
-, ph.ph_first
+, coalesce(creatinine.creatinine_first, 0) as creatinine_first_coded
+--, creatinine.creatinine_lowest
+--, creatinine.creatinine_highest
+, creatinine.creatinine_abnormal_flg
 , po2.po2_first
+, coalesce(po2.po2_first, 0) as po2_first_coded
+--, po2.po2_lowest
+--, po2.po2_highest
+, po2.po2_abnormal_flg
 , pco2.pco2_first
+, coalesce(pco2.pco2_first, 0) as pco2_first_coded
+--, pco2.pco2_lowest
+--, pco2.pco2_highest
+, pco2.pco2_abnormal_flg
 
 from population pop
 left join vent_group vent on pop.icustay_id = vent.icustay_id
@@ -833,10 +927,9 @@ left join lab_tco2 tco2 on tco2.icustay_id=pop.icustay_id
 left join lab_chloride chloride on chloride.icustay_id=pop.icustay_id
 left join lab_bun bun on bun.icustay_id=pop.icustay_id
 left join lab_creatinine creatinine on creatinine.icustay_id=pop.icustay_id
-left join lab_lactate lactate on lactate.icustay_id=pop.icustay_id
-left join lab_ph ph on ph.icustay_id=pop.icustay_id
 left join lab_po2 po2 on po2.icustay_id=pop.icustay_id
 left join lab_pco2 pco2 on pco2.icustay_id=pop.icustay_id
 )
 
-select * from final_table;
+select * from final_
+
