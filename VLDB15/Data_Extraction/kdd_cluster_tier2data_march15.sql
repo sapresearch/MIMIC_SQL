@@ -814,19 +814,19 @@ order by 1
 , ph.ph_first
 , po2.po2_first
 , pco2.pco2_first
-<<<<<<< HEAD
-=======
-, coalesce(pco2.pco2_first, 0) as pco2_first_coded
---, pco2.pco2_lowest
---, pco2.pco2_highest
-, pco2.pco2_abnormal_flg
-, lactate.lactate_first
-, coalesce(lactate.lactate_first, 0) as lactate_first_coded
-, lactate.lactate_abnormal_flg
-, ph.ph_first
-, coalesce(ph.ph_first, 0) as ph_first_coded
-, ph.ph_abnormal_flg
->>>>>>> 98ddd99884ebb04b2d0e8055454f2ddcee6d477f
+--<<<<<<< HEAD
+--=======
+--, coalesce(pco2.pco2_first, 0) as pco2_first_coded
+----, pco2.pco2_lowest
+----, pco2.pco2_highest
+--, pco2.pco2_abnormal_flg
+--, lactate.lactate_first
+--, coalesce(lactate.lactate_first, 0) as lactate_first_coded
+--, lactate.lactate_abnormal_flg
+--, ph.ph_first
+--, coalesce(ph.ph_first, 0) as ph_first_coded
+--, ph.ph_abnormal_flg
+-->>>>>>> 98ddd99884ebb04b2d0e8055454f2ddcee6d477f
 
 from population pop
 left join vent_group vent on pop.icustay_id = vent.icustay_id
