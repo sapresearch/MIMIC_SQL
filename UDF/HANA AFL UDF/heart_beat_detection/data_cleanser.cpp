@@ -33,7 +33,7 @@ vector<double> data_cleanser:: gaussianFilter(vector<double> &rawsignal){
 				signal[i] = signal[i] / sum_;
         }
 
-		
+	free(filter);
 	return signal;
 
 }
@@ -124,5 +124,5 @@ void data_cleanser::data_cleansing(vector<double> &signal){
 	for( int i = 0; i< signal.size();i++){
 		if( !tag[i]) signal[i] = INT_MIN;
 	}
-	
+	free(tag);
 }
