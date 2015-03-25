@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+
+<AFLXML xmlns="AFLInterface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+<CPP STRING="#include &lt;hana/table.h&gt;"/>
+<CPP STRING="#include &lt;hana/column.h&gt;"/>
+<CPP STRING="#include &lt;hana/string.h&gt;"/>
+
+<INTERFACE NAME="IDTWAFL" UUID="B68B6E4D-E21C-4747-A95D-199CDD5854EA">
+
+   
+    <LFUNC NAME="DTW" CATEGORY="var_columns">
+        <PARAM NAME="inputtable1" DIRECTION="in" TYPE="HANATABLE">
+            <VARCOLUMNS EXPRESSION="[ID]"/>
+        </PARAM>
+
+	 <PARAM NAME="inputtable2" DIRECTION="in" TYPE="HANATABLE">
+            <VARCOLUMNS EXPRESSION="[ID]"/>
+        </PARAM>
+
+	<PARAM NAME="inputtable3" DIRECTION="in" TYPE="HANATABLE">
+            <VARCOLUMNS EXPRESSION="SI"/>
+        </PARAM>
+		
+        <PARAM NAME="outputTable1" DIRECTION="out" TYPE="HANATABLE">
+            <VARCOLUMNS EXPRESSION="[ID]"/>
+        </PARAM>
+    </LFUNC>
+
+   
+
+    <COCLASS NAME="DTWAFL" UUID="900AB60B-8D93-4536-B254-21C342465954"/>
+
+</INTERFACE>
+
+</AFLXML>
+
